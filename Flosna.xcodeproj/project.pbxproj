@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DDE90EB2AD4330D00D90EEF /* Leen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDE90EA2AD4330D00D90EEF /* Leen.swift */; };
 		1FAEDF052ACEE11C00E4E1F2 /* FlosnaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAEDF042ACEE11C00E4E1F2 /* FlosnaApp.swift */; };
 		1FAEDF072ACEE11C00E4E1F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAEDF062ACEE11C00E4E1F2 /* ContentView.swift */; };
 		1FAEDF092ACEE11D00E4E1F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FAEDF082ACEE11D00E4E1F2 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DDE90EA2AD4330D00D90EEF /* Leen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leen.swift; sourceTree = "<group>"; };
 		1FAEDF012ACEE11C00E4E1F2 /* Flosna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flosna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FAEDF042ACEE11C00E4E1F2 /* FlosnaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlosnaApp.swift; sourceTree = "<group>"; };
 		1FAEDF062ACEE11C00E4E1F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				1FAEDF042ACEE11C00E4E1F2 /* FlosnaApp.swift */,
 				1FAEDF062ACEE11C00E4E1F2 /* ContentView.swift */,
+				1DDE90EA2AD4330D00D90EEF /* Leen.swift */,
 				1FAEDF082ACEE11D00E4E1F2 /* Assets.xcassets */,
 				1FAEDF0A2ACEE11D00E4E1F2 /* Preview Content */,
 			);
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DDE90EB2AD4330D00D90EEF /* Leen.swift in Sources */,
 				1FAEDF072ACEE11C00E4E1F2 /* ContentView.swift in Sources */,
 				1FAEDF052ACEE11C00E4E1F2 /* FlosnaApp.swift in Sources */,
 			);
