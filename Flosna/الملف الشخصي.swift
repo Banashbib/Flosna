@@ -19,7 +19,7 @@ struct الملفالشخصي: View {
                     
                     Divider()
                        
-                    Image("sara").resizable().frame(width:200 , height:200).cornerRadius(400)
+                    Image("sara").resizable().frame(width:150 , height:150).cornerRadius(400)
                         .padding()
                     VStack(){
                         ZStack{
@@ -43,8 +43,7 @@ struct الملفالشخصي: View {
                                 .padding()
                             Text("اللغة")
                                 .font(.title)
-                                .multilineTextAlignment(.trailing)
-                                .padding(.leading, 250)
+                                
                             // end Zstack اللغة
                         }
                         //Vstack cont.
@@ -56,13 +55,14 @@ struct الملفالشخصي: View {
                             
                             Text("الاسئلة الشائعة")
                                 .font(.title)
-                                .multilineTextAlignment(.trailing)
-                                .padding(.leading, 180)
                             //end Zstack
+                                
                         }
                         
                         //Vstack cont. تسجيل خروج
+                        
                         HStack{
+                            
                             VStack {
                                 Button(action: {
                                     showLogoutAlert = true
@@ -115,7 +115,6 @@ struct الملفالشخصي: View {
                         
                     }
                 }
-                
                 
                     .navigationBarTitle("الملف الشخصي")
                 
