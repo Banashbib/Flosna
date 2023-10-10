@@ -10,7 +10,7 @@ import Foundation
 struct الاسئلةالشائعة: View {
     var body: some View {
         VStack {
-            Text("Leen")
+            Text("Leen    ")
         }
         .padding()
     }
