@@ -65,7 +65,7 @@ struct Registeration: View {
                 }) {
                     Text("لاحقًا")
                         .font(.headline)
-                        .foregroundColor(.gray)
+                        .foregroundColor(fcolor)
                         .padding()
                         .frame(maxWidth: .infinity)
                     //.background(Color.green)
@@ -74,7 +74,7 @@ struct Registeration: View {
                         .cornerRadius(10)
                         .overlay(
                             RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color.gray, lineWidth: 1)
+                                .stroke(fcolor, lineWidth: 1)
                         )
                 }
                 .padding()
