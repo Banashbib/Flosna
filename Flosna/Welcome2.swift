@@ -2,7 +2,7 @@
 //  Welcome2.swift
 //  Flosna
 //
-//  Created by Bana Alshabib on 24/03/1445 AH.
+//  Created by Bana Alshabib on 25/03/1445 AH.
 //
 
 import SwiftUI
