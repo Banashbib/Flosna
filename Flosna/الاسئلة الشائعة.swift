@@ -8,7 +8,7 @@
 import SwiftUI
 import Foundation
 struct دعم : View {
-    let textColor = Color(red:0.243, green: 0.306, blue: 0.251)
+   
     var body: some View {
  
         VStack {
@@ -56,7 +56,7 @@ struct دعم : View {
                     }
                     .padding(10)
                     .padding(.bottom, -250)
-                    .accentColor(textColor)
+                    .accentColor(Color.ourDarkGreen)
             }
             
         }

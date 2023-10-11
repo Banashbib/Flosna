@@ -43,9 +43,13 @@ struct الملفالشخصي: View {
                                 .padding()
                             Text("اللغة")
                                 .font(.title)
+                                .multilineTextAlignment(.trailing)
+                                .padding(.trailing, 220.0)
+                                
                                 
                             // end Zstack اللغة
                         }
+                        
                         //Vstack cont.
                         ZStack{
                             Rectangle()
@@ -55,6 +59,8 @@ struct الملفالشخصي: View {
                             
                             Text("الاسئلة الشائعة")
                                 .font(.title)
+                                .padding(.trailing, 120.0
+                                )
                             //end Zstack
                                 
                         }
@@ -63,7 +69,8 @@ struct الملفالشخصي: View {
                         
                         HStack{
                             
-                            VStack {
+                            
+                                
                                 Button(action: {
                                     showLogoutAlert = true
                                 }) {
@@ -84,10 +91,12 @@ struct الملفالشخصي: View {
                                             // تنفيذ الإجراء المرتبط بتسجيل الخروج هنا
                                         })
                                     )
+                                    
                                 }
                                 
                                 
-                            }
+                                
+                            
                             Button(action: {
                                 showDeleteAccountAlert = true
                             }) {
@@ -111,6 +120,7 @@ struct الملفالشخصي: View {
                                     })
                                 )
                             }
+                            
                         }
                         
                     }

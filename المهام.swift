@@ -27,14 +27,25 @@ struct المهام: View {
         
     var body: some View {
         NavigationView {
+            
             VStack {
-                Spacer(minLength: 150)
+                Divider()
+                    .padding([.top, .leading, .trailing])
+                    //Spacer(minLength: 150)
+                    Image("Image 1")
+                    
+                        .resizable()
+                        .frame(width: 300, height: 300)
+                        .aspectRatio(contentMode: .fit)
+                        .clipShape(Circle())
+                        
+                
                 
                 List(tasks) { task in
                     Toggle(isOn: $tasks[tasks.firstIndex(where: { $0.id == task.id })!].isCompleted) {
                         Text(task.title)
-                            .foregroundColor(task.isCompleted ? .green : .red)
-                            .strikethrough(task.isCompleted)
+                            .foregroundColor(task.isCompleted ? Color.ourgray2 : Color.ourDarkGreen)
+                            //.strikethrough(task.isCompleted)
                         
                     }
                     
