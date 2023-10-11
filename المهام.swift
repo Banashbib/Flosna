@@ -2,17 +2,60 @@
 //  المهام.swift
 //  Flosna
 //
-//  Created by Ahlam ALshehri on 26/03/1445 AH.
+//  Created by Ahlam ALshehri on 25/03/1445 AH.
 //
 
 import SwiftUI
 
-struct ______: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+struct Task: Identifiable {
+    let id = UUID()
+    var title: String
+    var isCompleted: Bool = false
 }
 
-#Preview {
-    ______()
+struct المهام: View {
+    @State private var tasks = [
+        Task(title: " تسديد الجزء المحدد من القرض"),
+        Task(title: " تسديد رواتب الموظفين "),
+        Task(title: "تسديد الايجار "),
+        Task(title: "تسديد الضريبة "),
+        Task(title: " طلب المعدات المطلوبة"),
+        Task(title: " توفير المبلغ المحدد للحالات الطارئة")
+           
+           
+    ]
+        
+    var body: some View {
+        NavigationView {
+            VStack {
+                Spacer(minLength: 150)
+                
+                List(tasks) { task in
+                    Toggle(isOn: $tasks[tasks.firstIndex(where: { $0.id == task.id })!].isCompleted) {
+                        Text(task.title)
+                            .foregroundColor(task.isCompleted ? .green : .red)
+                            .strikethrough(task.isCompleted)
+                        
+                    }
+                    
+                }
+            }
+            
+            .navigationBarTitle("قائمة المهام")
+            
+        }
+        .environment(\.layoutDirection, .rightToLeft)
+        .padding()
+        
+        .listStyle(PlainListStyle())
+        .background(Color.clear)
+        
+    }
+    
+}
+
+struct SwiftUIView_Previews: PreviewProvider {
+    static var previews: some View {
+        المهام()
+    }
 }

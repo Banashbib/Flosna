@@ -117,9 +117,12 @@ struct الملفالشخصي: View {
                 }
                 
                     .navigationBarTitle("الملف الشخصي")
-                
+                    .environment(\.layoutDirection, .rightToLeft)
+                    .padding()
                 
             }
+            .environment(\.layoutDirection, .rightToLeft)
+            .padding()
             .padding()
         }}}
 
