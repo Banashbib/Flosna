@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1DDE90EB2AD4330D00D90EEF /* Leen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDE90EA2AD4330D00D90EEF /* Leen.swift */; };
+		1DDE90EB2AD4330D00D90EEF /* الملف الشخصي.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDE90EA2AD4330D00D90EEF /* الملف الشخصي.swift */; };
 		1F0DDAAE2AD57A5B001F407E /* Welcome2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0DDAAD2AD57A5B001F407E /* Welcome2.swift */; };
 		1F0DDAB02AD57AD6001F407E /* Welcome3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0DDAAF2AD57AD6001F407E /* Welcome3.swift */; };
 		1F0DDAB22AD57B27001F407E /* Registeration .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0DDAB12AD57B27001F407E /* Registeration .swift */; };
@@ -20,6 +20,7 @@
 		1FAEDF222ACEE11D00E4E1F2 /* FlosnaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAEDF212ACEE11D00E4E1F2 /* FlosnaUITestsLaunchTests.swift */; };
 		1FB0270E2AD4378100F9265D /* welcom1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB0270D2AD4378100F9265D /* welcom1.swift */; };
 		CD08CCA82AD435B9007952CB /* الاسئلة الشائعة.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08CCA72AD435B9007952CB /* الاسئلة الشائعة.swift */; };
+		CD08CCBE2AD6C6A0007952CB /* المهام.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08CCBD2AD6C6A0007952CB /* المهام.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1DDE90EA2AD4330D00D90EEF /* Leen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leen.swift; sourceTree = "<group>"; };
+		1DDE90EA2AD4330D00D90EEF /* الملف الشخصي.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "الملف الشخصي.swift"; sourceTree = "<group>"; };
 		1F0DDAAD2AD57A5B001F407E /* Welcome2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome2.swift; sourceTree = "<group>"; };
 		1F0DDAAF2AD57AD6001F407E /* Welcome3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome3.swift; sourceTree = "<group>"; };
 		1F0DDAB12AD57B27001F407E /* Registeration .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registeration .swift"; sourceTree = "<group>"; };
@@ -56,6 +57,7 @@
 		1FAEDF212ACEE11D00E4E1F2 /* FlosnaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlosnaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1FB0270D2AD4378100F9265D /* welcom1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = welcom1.swift; sourceTree = "<group>"; };
 		CD08CCA72AD435B9007952CB /* الاسئلة الشائعة.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "الاسئلة الشائعة.swift"; sourceTree = "<group>"; };
+		CD08CCBD2AD6C6A0007952CB /* المهام.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "المهام.swift"; path = "../المهام.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +110,8 @@
 			children = (
 				1FAEDF042ACEE11C00E4E1F2 /* FlosnaApp.swift */,
 				1FAEDF062ACEE11C00E4E1F2 /* ContentView.swift */,
-				1DDE90EA2AD4330D00D90EEF /* Leen.swift */,
+				1DDE90EA2AD4330D00D90EEF /* الملف الشخصي.swift */,
+				CD08CCBD2AD6C6A0007952CB /* المهام.swift */,
 				1FAEDF082ACEE11D00E4E1F2 /* Assets.xcassets */,
 				CD08CCA72AD435B9007952CB /* الاسئلة الشائعة.swift */,
 				1FB0270D2AD4378100F9265D /* welcom1.swift */,
@@ -275,9 +278,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD08CCBE2AD6C6A0007952CB /* المهام.swift in Sources */,
 				CD08CCA82AD435B9007952CB /* الاسئلة الشائعة.swift in Sources */,
 				1F0DDAAE2AD57A5B001F407E /* Welcome2.swift in Sources */,
-				1DDE90EB2AD4330D00D90EEF /* Leen.swift in Sources */,
+				1DDE90EB2AD4330D00D90EEF /* الملف الشخصي.swift in Sources */,
 				1FB0270E2AD4378100F9265D /* welcom1.swift in Sources */,
 				1FAEDF072ACEE11C00E4E1F2 /* ContentView.swift in Sources */,
 				1F0DDAB02AD57AD6001F407E /* Welcome3.swift in Sources */,
