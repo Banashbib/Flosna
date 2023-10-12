@@ -11,7 +11,11 @@ import SwiftUI
 struct FlosnaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+          //  ContentView()
+            Tasks()
+                .environment(\.locale, Locale(identifier: "ar"))
+                 .environment(\.layoutDirection, .rightToLeft)
+              // .environment(\.layoutDirection, .rightToLeft)
         }
     }
 }

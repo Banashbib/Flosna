@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Foundation
-struct دعم : View {
+struct Questions : View {
    
     var body: some View {
  
@@ -66,5 +66,5 @@ struct دعم : View {
    
     }
 #Preview {
-    دعم()
+    Questions()
 }
