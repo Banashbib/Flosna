@@ -38,10 +38,12 @@ struct Tasks: View {
                 Image("Image 1")
                 
                     .resizable()
-                    .padding([.bottom, .trailing], 50.0)
-                    .frame(width: 350, height: 350)
-                    .aspectRatio(contentMode: .fit)
-                    .clipShape(Circle())
+                    .frame(width: 200, height: 200)
+                    .padding(.bottom, 50.0)
+                    .padding(.trailing, 30)
+                    .padding(.leading, 30)
+                 //   .aspectRatio(contentMode: .fit)
+                  // .clipShape(Circle())
                  
                 
                 
@@ -50,15 +52,22 @@ struct Tasks: View {
                         Button(action: {
                             toggleTaskCompletion(task)
                         }) {
-                            if task.isCompleted {
-                                Image(systemName: "checkmark.square.fill")
-                                    .foregroundColor(.green)
-                            } else {
-                                Image(systemName: "square")
-                                    .foregroundColor(.gray)
-                            }
                             
-                            Text(task.title)
+                            HStack {
+                                
+                                Text(task.title)
+                                
+                                if task.isCompleted {
+                                    Image(systemName: "checkmark.square.fill")
+                                        .foregroundColor(.green)
+                                } else {
+                                    Image(systemName: "square")
+                                        .foregroundColor(.gray)
+                                }
+                                
+                               
+                                
+                            }
                             
                         }
                         .font(.title3)
@@ -79,11 +88,15 @@ struct Tasks: View {
            
             .navigationBarTitle("قائمة المهام")
             .padding(.trailing, 20)
+            .environment(\.layoutDirection, .leftToRight)
+          //
         }
         
         
         .listStyle(PlainListStyle())
         .background(Color.clear)
+      //
+
         
     }
     
