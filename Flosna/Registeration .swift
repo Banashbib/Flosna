@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+//import LocalAuthentication
 
 struct Registeration: View {
+    // @State private var isUnlocked = false
     @State private var phoneNumber: String = ""
     @State private var verificationCode: String = ""
     let fcolor = Color(red:0.486, green: 0.729, blue: 0.588)
@@ -15,89 +17,94 @@ struct Registeration: View {
     var body: some View {
         VStack  {
             //Spacer()
+           // NavigationView {
             HStack{
+                
+                    //Spacer()
+                    Text("التسجيل")
+                        .font(.largeTitle)
+                        .bold()
+                        .padding(.bottom,1)
+                    
+                    
+                    Spacer()
+                }
+                .padding(.top,10)
+                .padding(.horizontal,30)
+                
+                Divider()
+                    .padding(.horizontal,20)
+                //Spacer()
+                    .padding()
+                TextField("رقم الهاتف", text: $phoneNumber)
+                    .padding()
+                    .keyboardType(.numberPad)
+                    .background(Color.white)
+                    .cornerRadius(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(fcolor, lineWidth: 1)
+                    )
+                    .padding(.horizontal,20)
+                
+                TextField("رمز التحقق", text: $verificationCode)
+                    .padding()
+                    .keyboardType(.numberPad)
+                    .background(Color.white)
+                    .cornerRadius(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(fcolor, lineWidth: 1)
+                    )
+                
+                    .padding(.horizontal,20)
                 Spacer()
-                Text("التسجيل")
-                    .font(.largeTitle)
-                    .padding(.bottom,1)
-                
-                
-                //Spacer()
-            }
-            .padding(.top,10)
-            .padding(.horizontal,30)
-            
-            Divider()
-                .padding(.horizontal,20)
-            //Spacer()
-                .padding()
-            TextField("رقم الهاتف", text: $phoneNumber)
-                .padding()
-                .keyboardType(.numberPad)
-                .background(Color.white)
-                .cornerRadius(10)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(fcolor, lineWidth: 1)
-                )
-               .padding(.horizontal,20)
-            
-            TextField("رمز التحقق", text: $verificationCode)
-                .padding()
-                .keyboardType(.numberPad)
-                .background(Color.white)
-                .cornerRadius(10)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(fcolor, lineWidth: 1)
-                )
-            
-            .padding(.horizontal,20)
-            Spacer()
-            HStack{
-                
-                
-                
-                //Spacer()
-                
-                Button(action: {
-                    cancel()
-                }) {
-                    Text("لاحقًا")
-                        .font(.headline)
-                        .foregroundColor(fcolor)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                    //.background(Color.green)
-                        .cornerRadius(10)
-                        .background(Color.white)
-                        .cornerRadius(10)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(fcolor, lineWidth: 1)
-                        )
+                HStack{
+                    
+                    
+                    
+                    //Spacer()
+                    
+                    Button(action: {
+                        cancel()
+                    }) {
+                        Text("لاحقًا")
+                            .font(.headline)
+                            .foregroundColor(fcolor)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                        //.background(Color.green)
+                            .cornerRadius(10)
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(fcolor, lineWidth: 1)
+                            )
+                    }
+                    .padding()
+                    
+                    Button(action: {
+                        register()
+                    }) {
+                        Text("تسجيل")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(fcolor)
+                            .cornerRadius(10)
+                        
+                    }
+                    .padding()
+                    
+                    
                 }
-                .padding()
-                
-                Button(action: {
-                    register()
-                }) {
-                    Text("تسجيل")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(fcolor)
-                        .cornerRadius(10)
-                }
-                .padding()
-                
-                
+                .padding(.horizontal,2)
+                Spacer()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-            .padding(.horizontal,2)
-            Spacer()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-            }
+        //}
         
     }
     
