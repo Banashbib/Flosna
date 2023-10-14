@@ -11,8 +11,6 @@
 		1F0DDAAE2AD57A5B001F407E /* Welcome2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0DDAAD2AD57A5B001F407E /* Welcome2.swift */; };
 		1F0DDAB02AD57AD6001F407E /* Welcome3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0DDAAF2AD57AD6001F407E /* Welcome3.swift */; };
 		1F0DDAB22AD57B27001F407E /* Registeration .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0DDAB12AD57B27001F407E /* Registeration .swift */; };
-		1FA7756D2AD5D3F300A11123 /* Dashboeard .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7756C2AD5D3F300A11123 /* Dashboeard .swift */; };
-		1FA7756F2AD6DD0F00A11123 /* face a.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA7756E2AD6DD0F00A11123 /* face a.swift */; };
 		1FAEDF052ACEE11C00E4E1F2 /* FlosnaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAEDF042ACEE11C00E4E1F2 /* FlosnaApp.swift */; };
 		1FAEDF072ACEE11C00E4E1F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAEDF062ACEE11C00E4E1F2 /* ContentView.swift */; };
 		1FAEDF092ACEE11D00E4E1F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FAEDF082ACEE11D00E4E1F2 /* Assets.xcassets */; };
@@ -47,8 +45,6 @@
 		1F0DDAAD2AD57A5B001F407E /* Welcome2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome2.swift; sourceTree = "<group>"; };
 		1F0DDAAF2AD57AD6001F407E /* Welcome3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome3.swift; sourceTree = "<group>"; };
 		1F0DDAB12AD57B27001F407E /* Registeration .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registeration .swift"; sourceTree = "<group>"; usesTabs = 0; };
-		1FA7756C2AD5D3F300A11123 /* Dashboeard .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dashboeard .swift"; sourceTree = "<group>"; wrapsLines = 1; };
-		1FA7756E2AD6DD0F00A11123 /* face a.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "face a.swift"; sourceTree = "<group>"; };
 		1FAEDF012ACEE11C00E4E1F2 /* Flosna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flosna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FAEDF042ACEE11C00E4E1F2 /* FlosnaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlosnaApp.swift; sourceTree = "<group>"; };
 		1FAEDF062ACEE11C00E4E1F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,7 +88,6 @@
 		1FAEDEF82ACEE11C00E4E1F2 = {
 			isa = PBXGroup;
 			children = (
-				1FA7756E2AD6DD0F00A11123 /* face a.swift */,
 				1FAEDF032ACEE11C00E4E1F2 /* Flosna */,
 				1FAEDF142ACEE11D00E4E1F2 /* FlosnaTests */,
 				1FAEDF1E2ACEE11D00E4E1F2 /* FlosnaUITests */,
@@ -123,7 +118,6 @@
 				1F0DDAAD2AD57A5B001F407E /* Welcome2.swift */,
 				1F0DDAAF2AD57AD6001F407E /* Welcome3.swift */,
 				1F0DDAB12AD57B27001F407E /* Registeration .swift */,
-				1FA7756C2AD5D3F300A11123 /* Dashboeard .swift */,
 				1FAEDF0A2ACEE11D00E4E1F2 /* Preview Content */,
 			);
 			path = Flosna;
@@ -290,9 +284,7 @@
 				1DDE90EB2AD4330D00D90EEF /* الملف الشخصي.swift in Sources */,
 				1FB0270E2AD4378100F9265D /* welcom1.swift in Sources */,
 				1FAEDF072ACEE11C00E4E1F2 /* ContentView.swift in Sources */,
-				1FA7756F2AD6DD0F00A11123 /* face a.swift in Sources */,
 				1F0DDAB02AD57AD6001F407E /* Welcome3.swift in Sources */,
-				1FA7756D2AD5D3F300A11123 /* Dashboeard .swift in Sources */,
 				1FAEDF052ACEE11C00E4E1F2 /* FlosnaApp.swift in Sources */,
 				1F0DDAB22AD57B27001F407E /* Registeration .swift in Sources */,
 			);
