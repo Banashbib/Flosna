@@ -12,8 +12,8 @@ struct FlosnaApp: App {
     var body: some Scene {
         WindowGroup {
           //  ContentView()
-            Tasks()
-                .environment(\.locale, Locale(identifier: "ar"))
+            plan()
+                
                  .environment(\.layoutDirection, .rightToLeft)
               // .environment(\.layoutDirection, .rightToLeft)
         }

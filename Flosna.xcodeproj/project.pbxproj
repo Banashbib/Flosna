@@ -21,6 +21,7 @@
 		1FB0270E2AD4378100F9265D /* welcom1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB0270D2AD4378100F9265D /* welcom1.swift */; };
 		CD08CCA82AD435B9007952CB /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08CCA72AD435B9007952CB /* Questions.swift */; };
 		CD08CCBE2AD6C6A0007952CB /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08CCBD2AD6C6A0007952CB /* Tasks.swift */; };
+		F3EEBBDC2AD822BB0051C7AB /* plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EEBBDB2AD822BB0051C7AB /* plan.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		1FB0270D2AD4378100F9265D /* welcom1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = welcom1.swift; sourceTree = "<group>"; };
 		CD08CCA72AD435B9007952CB /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		CD08CCBD2AD6C6A0007952CB /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tasks.swift; path = ../Tasks.swift; sourceTree = "<group>"; };
+		F3EEBBDB2AD822BB0051C7AB /* plan.swift */ = {isa = PBXFileReference; indentWidth = 6; lastKnownFileType = sourcecode.swift; path = plan.swift; sourceTree = "<group>"; usesTabs = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				1FAEDF042ACEE11C00E4E1F2 /* FlosnaApp.swift */,
+				F3EEBBDB2AD822BB0051C7AB /* plan.swift */,
 				1FAEDF062ACEE11C00E4E1F2 /* ContentView.swift */,
 				1DDE90EA2AD4330D00D90EEF /* الملف الشخصي.swift */,
 				CD08CCBD2AD6C6A0007952CB /* Tasks.swift */,
@@ -284,6 +287,7 @@
 				1DDE90EB2AD4330D00D90EEF /* الملف الشخصي.swift in Sources */,
 				1FB0270E2AD4378100F9265D /* welcom1.swift in Sources */,
 				1FAEDF072ACEE11C00E4E1F2 /* ContentView.swift in Sources */,
+				F3EEBBDC2AD822BB0051C7AB /* plan.swift in Sources */,
 				1F0DDAB02AD57AD6001F407E /* Welcome3.swift in Sources */,
 				1FAEDF052ACEE11C00E4E1F2 /* FlosnaApp.swift in Sources */,
 				1F0DDAB22AD57B27001F407E /* Registeration .swift in Sources */,
