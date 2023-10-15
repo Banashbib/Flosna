@@ -23,32 +23,45 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
+            
             VStack {
-                //Divider()
+               // Divider()
                 if projects.isEmpty {
-                    Text("لاتوجد مشاريع")
+                    Text("لاتوجد مشاريع حاليًا")
                         .foregroundColor(.gray)
                         .font(.headline)
                         .padding(.top,300)
+                    
                 }
-                
+               
                     
                 List(projects) { project in
                     NavigationLink(destination: ProjectDetail(project: project)) {
                         ProjectRow(project: project)
                     }
+                    
                 }
+                
             }
-           
-            
             .navigationTitle("المشاريع")
-            .navigationBarItems(trailing: Button(action: {
-                isShowingAddProject = true
-            }) {
-                Image(systemName: "plus")
-                    .foregroundColor(.ourgreen)
-            })
-        }
+                        .navigationBarItems(
+                            leading: HStack {
+                                NavigationLink(destination: Profile()) {
+                                    Image(systemName: "person.circle")
+                                        .foregroundColor(.ourgreen)
+                                        .font(.system(size: 28))
+                                }
+                                
+                                Button(action: {
+                                    isShowingAddProject = true
+                                }) {
+                                    Image(systemName: "plus")
+                                        .foregroundColor(.ourgreen)
+                                        .font(.system(size: 25))
+                                }
+                            }
+                        )
+                    }
         
         .sheet(isPresented: $isShowingAddProject) {
             AddProjectView(projects: $projects, dismissAction: {
@@ -79,19 +92,22 @@ struct ProjectRow: View {
             }
             
             
-            VStack(alignment: .leading) {
+            VStack {
                             Text(project.title)
                                 .font(.headline)
+                                
                             Text(project.description)
                                 .font(.subheadline)
                         }
             HStack (spacing : 60) {
                 Image(systemName: "list.bullet.clipboard.fill")
                     .foregroundColor(.ourgreen)
+                    .font(.system(size: 25))
                     .padding()
                 
                 Image(systemName: "waveform.path.ecg.rectangle.fill")
                     .foregroundColor(.ourgreen)
+                    .font(.system(size: 25))
                     .padding()
             }
             

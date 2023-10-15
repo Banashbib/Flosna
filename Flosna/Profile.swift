@@ -15,10 +15,10 @@ struct Profile: View {
         VStack{
             NavigationView {
                 
-                VStack(spacing:20){
-                    Divider()
-                                                                .padding(.horizontal,9)
-                    
+                VStack{
+//                    Divider()
+//                                                                .padding(.horizontal,9)
+//                    
                    // Spacer()
 
                     Image("sara").resizable().frame(width:150 , height:150).cornerRadius(400)
@@ -129,6 +129,7 @@ struct Profile: View {
                             }
 
                         }
+                        
                         
 
                         

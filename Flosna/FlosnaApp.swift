@@ -13,10 +13,17 @@ struct FlosnaApp: App {
         WindowGroup {
 
           //  ContentView()
+
             plan()
                 
                  .environment(\.layoutDirection, .rightToLeft)
               // .environment(\.layoutDirection, .rightToLeft)
+
+//            Tasks()
+//                .environment(\.locale, Locale(identifier: "ar"))
+//                 .environment(\.layoutDirection, .rightToLeft)
+//              // .environment(\.layoutDirection, .rightToLeft)
+
 
             ContentView()
                 .environment(\.locale, Locale(identifier: "ar"))

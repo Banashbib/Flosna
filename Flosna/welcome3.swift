@@ -34,6 +34,6 @@ struct Welcome3: View {
 }
 
 #Preview {
-    welcom1()
+    Welcome3()
 }
 

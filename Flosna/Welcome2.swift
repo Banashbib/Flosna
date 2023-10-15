@@ -10,7 +10,7 @@ import SwiftUI
 struct Welcome2: View {
     var body: some View {
         ZStack (alignment: .topTrailing){
-            Image("welcome page 2")
+            Image("WP2")
                 .resizable()
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             Button(action: {
@@ -34,5 +34,5 @@ struct Welcome2: View {
 }
 
 #Preview {
-    welcom1()
+    Welcome2()
 }
