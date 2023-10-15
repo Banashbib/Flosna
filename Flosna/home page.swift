@@ -1,18 +1,18 @@
 //
-//  home screen.swift
+//  home page.swift
 //  Flosna
 //
-//  Created by Leen Almejarri on 30/03/1445 AH.
+//  Created by Leen Almejarri on 29/03/1445 AH.
 //
 
 import SwiftUI
 
-struct home_screen: View {
+struct home_page: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    home_screen()
+    home_page()
 }

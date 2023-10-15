@@ -7,7 +7,7 @@
 import SwiftUI
 import Foundation
 
-struct الملفالشخصي: View {
+struct Profile: View {
     @State var tog : Bool = false
     @State private var showLogoutAlert = false
     @State private var showDeleteAccountAlert = false
@@ -15,13 +15,16 @@ struct الملفالشخصي: View {
         VStack{
             NavigationView {
                 
-                VStack (spacing:30){
-                    
+                VStack(spacing:20){
                     Divider()
-                       
+                                                                .padding(.horizontal,9)
+                    
+                   // Spacer()
+
                     Image("sara").resizable().frame(width:150 , height:150).cornerRadius(400)
                         .padding()
-                    VStack(){
+                   
+                    VStack{
                         ZStack{
                             Rectangle()
                                 .fill(Color.ourgray).frame(width: 346.0, height: 54.8)
@@ -32,6 +35,7 @@ struct الملفالشخصي: View {
                                     .font(.title)
                             }
                             .padding(.horizontal,30)
+                           
                             // end Zstack تنبيهات
                         }
                         //Vstack cont.
@@ -40,12 +44,15 @@ struct الملفالشخصي: View {
                                 .fill(Color.ourgray).frame(width: 346.0, height: 54.8)
                                 .cornerRadius(9)
                             
-                                .padding()
+                                //.padding()
                             Text("اللغة")
                                 .font(.title)
+
                                 .multilineTextAlignment(.trailing)
                                 .padding(.trailing, 220.0)
                                 
+
+                                .padding()
                                 
                             // end Zstack اللغة
                         }
@@ -67,7 +74,7 @@ struct الملفالشخصي: View {
                         
                         //Vstack cont. تسجيل خروج
                         
-                        HStack{
+                        HStack(spacing:20){
                             
                             
                                 
@@ -120,12 +127,16 @@ struct الملفالشخصي: View {
                                     })
                                 )
                             }
-                            
+
                         }
                         
+
+                        
                     }
+                    
+
                 }
-                
+
                     .navigationBarTitle("الملف الشخصي")
                     .environment(\.layoutDirection, .rightToLeft)
                     .padding()
@@ -134,11 +145,13 @@ struct الملفالشخصي: View {
             .environment(\.layoutDirection, .rightToLeft)
             .padding()
             .padding()
+            .environment(\.locale, Locale(identifier: "ar"))
+            .environment(\.layoutDirection, .rightToLeft)
         }}}
 
           
-            
+    
 
 #Preview {
-    الملفالشخصي()
+    Profile()
 }

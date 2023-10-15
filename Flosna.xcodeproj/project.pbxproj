@@ -45,7 +45,7 @@
 		1DDE90EA2AD4330D00D90EEF /* الملف الشخصي.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "الملف الشخصي.swift"; sourceTree = "<group>"; };
 		1F0DDAAD2AD57A5B001F407E /* Welcome2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome2.swift; sourceTree = "<group>"; };
 		1F0DDAAF2AD57AD6001F407E /* Welcome3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome3.swift; sourceTree = "<group>"; };
-		1F0DDAB12AD57B27001F407E /* Registeration .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registeration .swift"; sourceTree = "<group>"; };
+		1F0DDAB12AD57B27001F407E /* Registeration .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registeration .swift"; sourceTree = "<group>"; usesTabs = 0; };
 		1FAEDF012ACEE11C00E4E1F2 /* Flosna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flosna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FAEDF042ACEE11C00E4E1F2 /* FlosnaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlosnaApp.swift; sourceTree = "<group>"; };
 		1FAEDF062ACEE11C00E4E1F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -456,6 +456,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Flosna/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "we need to unlock your data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -484,6 +485,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Flosna/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "we need to unlock your data.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
