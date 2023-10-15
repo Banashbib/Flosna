@@ -118,8 +118,8 @@
 		1FAEDF032ACEE11C00E4E1F2 /* Flosna */ = {
 			isa = PBXGroup;
 			children = (
-				1FB8E54E2ADC1C980098E197 /* Profile.swift */,
 				1FAEDF042ACEE11C00E4E1F2 /* FlosnaApp.swift */,
+				1FB8E54E2ADC1C980098E197 /* Profile.swift */,
 				F3EEBBDB2AD822BB0051C7AB /* plan.swift */,
 				1FAEDF062ACEE11C00E4E1F2 /* ContentView.swift */,
 				CD08CCBD2AD6C6A0007952CB /* Tasks.swift */,
