@@ -6,11 +6,12 @@ struct DashboardView: View {
 
     
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(alignment: .trailing, spacing: 30) {
             Text("التحليل المالي")
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(.black)
+                .padding(.horizontal, 20)
             
             Divider()
                 .padding(.horizontal,20)
@@ -26,7 +27,7 @@ struct DashboardView: View {
 
                 
                 HStack(){   LineChartView(data: [8,23,54,32,12,37,7,23,43], title:"الارباح")
-                    LineChartView(data: [88,77,40], title: "ت")
+                    LineChartView(data: [88,77,40], title: "")
                     
                 }
                 
@@ -36,7 +37,9 @@ struct DashboardView: View {
             
         }
         .padding()
+       
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

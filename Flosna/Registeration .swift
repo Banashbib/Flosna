@@ -12,6 +12,12 @@ struct Registeration: View {
     // @State private var isUnlocked = false
     @State private var phoneNumber: String = ""
     @State private var verificationCode: String = ""
+    
+    @State private var digit1: String = ""
+    @State private var digit2: String = ""
+    @State private var digit3: String = ""
+    @State private var digit4: String = ""
+    
     let fcolor = Color(red:0.486, green: 0.729, blue: 0.588)
     
     var body: some View {
@@ -47,15 +53,52 @@ struct Registeration: View {
                     )
                     .padding(.horizontal,20)
                 
-                TextField("رمز التحقق", text: $verificationCode)
+            
+            VStack {
+                Text("ادخل رمز التحقق")
+                    .font(.headline)
+                    .foregroundColor(Color.gray)
                     .padding()
-                    .keyboardType(.numberPad)
-                    .background(Color.white)
-                    .cornerRadius(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(fcolor, lineWidth: 1)
-                    )
+                
+                HStack(spacing: 16) {
+                    DigitTextField(tag: 1, text: $digit1)
+                    DigitTextField(tag: 2, text: $digit2)
+                    DigitTextField(tag: 3, text: $digit3)
+                    DigitTextField(tag: 4, text: $digit4)
+                }
+                .padding()
+                
+                Button("") {
+                    let verificationCode = digit1 + digit2 + digit3 + digit4
+                    
+                    // Perform verification logic here
+                    if verificationCode == "1234" {
+                        // Verification code is correct
+                        print("Verification Successful")
+                    } else {
+                        // Verification code is incorrect
+                        print("Verification Failed")
+                    }
+                }
+                .padding()
+                
+               // Spacer()
+            }
+            .padding()
+            
+            
+            
+            
+            
+//                TextField("رمز التحقق", text: $verificationCode)
+//                    .padding()
+//                    .keyboardType(.numberPad)
+//                    .background(Color.white)
+//                    .cornerRadius(10)
+//                    .overlay(
+//                        RoundedRectangle(cornerRadius: 10)
+//                            .stroke(fcolor, lineWidth: 1)
+//                    )
                 
                     .padding(.horizontal,20)
                 Spacer()
@@ -86,7 +129,19 @@ struct Registeration: View {
                     
                     Button(action: {
                         register()
-                    }) {
+                    }) {                Button("") {
+                        let verificationCode = digit1 + digit2 + digit3 + digit4
+                        
+                        // Perform verification logic here
+                        if verificationCode == "1234" {
+                            // Verification code is correct
+                            print("Verification Successful")
+                        } else {
+                            // Verification code is incorrect
+                            print("Verification Failed")
+                        }
+                    }
+
                         Text("تسجيل")
                             .font(.headline)
                             .foregroundColor(.white)
@@ -95,7 +150,7 @@ struct Registeration: View {
                             .background(fcolor)
                             .cornerRadius(10)
                         
-                    }
+                   }
                     .padding()
                     
                     
@@ -123,6 +178,23 @@ struct Registeration: View {
         
     }
 }
+
+struct DigitTextField: View {
+    let tag: Int
+    @Binding var text: String
+    
+    var body: some View {
+        TextField("", text: $text)
+            .keyboardType(.numberPad)
+            .frame(width: 50, height: 50)
+            .font(.title)
+            .background(Color.gray.opacity(0.2))
+            .cornerRadius(10)
+            .multilineTextAlignment(.center)
+            .tag(tag)
+    }
+}
+
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
