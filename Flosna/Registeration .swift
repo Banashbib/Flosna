@@ -39,8 +39,8 @@ struct Registeration: View {
                 .padding(.top,10)
                 .padding(.horizontal,30)
                 
-                Divider()
-                    .padding(.horizontal,20)
+//                Divider()
+//                    .padding(.horizontal,20)
                 //Spacer()
                     .padding()
                 TextField("رقم الهاتف", text: $phoneNumber)
@@ -201,6 +201,8 @@ struct DigitTextField: View {
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
         Registeration()
+            .environment(\.layoutDirection, .rightToLeft)
+
     }
 }
 

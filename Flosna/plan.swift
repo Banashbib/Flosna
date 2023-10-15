@@ -34,6 +34,7 @@ struct plan: View {
       @State private var selectedProjectRent: String? = nil
       @State private var save = false
       @State private var cancell = false
+      @Environment(\.presentationMode) var presentationMode
 
 
 
@@ -61,8 +62,18 @@ struct plan: View {
 
         
         let fcolor = Color(red: 0.486, green: 0.729, blue: 0.588)
+      
+      init(projectName: String, projectDescription: String) {
+              self._projectName = State(initialValue: projectName)
+              self._projectDescription = State(initialValue: projectDescription)
+          }
         
-        
+      private func toggleCommitmentCompletion(_ commitment: Commitment) {
+             if let index = commitments.firstIndex(where: { $0.id == commitment.id }) {
+                 commitments[index].isCompleted.toggle()
+             }
+         }
+      
         var body: some View {
               NavigationView {
                     ScrollView {
@@ -92,37 +103,37 @@ struct plan: View {
                                       )
                                       .padding(.horizontal, 20)
                                 
-                                VStack(alignment: .leading, spacing: 20) {
-                                      Text("نوع المشروع: ")
-                                            .font(.headline)
-                                            .padding(.leading)
-                                      
-                                      Menu {
-                                            ForEach(projectTypes, id: \.self) { type in
-                                                  Button(action: {
-                                                        selectedProjectType = type
-                                                  }) {
-                                                        Label(type, systemImage: "square")
-                                                  }
-                                            }
-                                      } label: {
-                                            HStack() {
-                                                  Image(systemName: "chevron.down")
-                                                        .foregroundColor(.black)
-                                                  Text(selectedProjectType ?? "اختر نوع المشروع")
-                                                        .foregroundColor(.gray)
-                                            }
-                                            .frame(maxWidth: .infinity)
-                                            .frame(height: 40)
-                                            .background(Color.white)
-                                            .cornerRadius(10)
-                                            .overlay(
-                                                RoundedRectangle(cornerRadius: 10)
-                                                      .stroke(fcolor, lineWidth: 1)
-                                            )
-                                            .padding(.horizontal, 20)
-                                      }
-                                }
+//                                VStack(alignment: .leading, spacing: 20) {
+//                                      Text("نوع المشروع: ")
+//                                            .font(.headline)
+//                                            .padding(.leading)
+//                                      
+//                                      Menu {
+//                                            ForEach(projectTypes, id: \.self) { type in
+//                                                  Button(action: {
+//                                                        selectedProjectType = type
+//                                                  }) {
+//                                                        Label(type, systemImage: "square")
+//                                                  }
+//                                            }
+//                                      } label: {
+//                                            HStack() {
+//                                                  Image(systemName: "chevron.down")
+//                                                        .foregroundColor(.black)
+//                                                  Text(selectedProjectType ?? "اختر نوع المشروع")
+//                                                        .foregroundColor(.gray)
+//                                            }
+//                                            .frame(maxWidth: .infinity)
+//                                            .frame(height: 40)
+//                                            .background(Color.white)
+//                                            .cornerRadius(10)
+//                                            .overlay(
+//                                                RoundedRectangle(cornerRadius: 10)
+//                                                      .stroke(fcolor, lineWidth: 1)
+//                                            )
+//                                            .padding(.horizontal, 20)
+//                                      }
+//                                }
                                 
                                 Text("وصف المشروع: ")
                                       .font(.headline)
@@ -183,7 +194,6 @@ struct plan: View {
                                       
                                       ForEach(0..<partnerNames.count, id: \.self) { index in
                                             HStack(spacing: 20) {
-                                                  
                                                   TextField("إسم الشريك", text: Binding(
                                                       get: { partnerNames[index] },
                                                       set: { partnerNames[index] = $0 }
@@ -200,7 +210,6 @@ struct plan: View {
                                                             .stroke(fcolor, lineWidth: 1)
                                                            
                                                   )
-                                                  
                                                   TextField("نسبة الشريك", value: Binding(
                                                       get: { partnerPercentages[index] },
                                                       set: { partnerPercentages[index] = $0 }
@@ -239,33 +248,33 @@ struct plan: View {
                                       .foregroundColor(.gray)
                                       .padding(.leading)
                                 
-                                VStack(alignment: .leading, spacing: 20) {
-                                      
-                                      
-                                      LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
-                                            ForEach(commitments) { commitment in
-                                                  Button(action: {
-                                                        toggleCommitmentCompletion(commitment)
-                                                  }) {
-                                                        HStack {
-                                                              Text(commitment.title)
-                                                                    .font(.subheadline)
-                                                                    .foregroundColor(.ourDarkGreen)
-                                                                    .lineLimit(1)
-                                                              
-                                                              if commitment.isCompleted {
-                                                                    Image(systemName: "checkmark.square.fill")
-                                                                          .foregroundColor(.green)
-                                                              } else {
-                                                                    Image(systemName: "square")
-                                                                          .foregroundColor(.gray)
-                                                              }
-                                                        }
-                                                  }
-                                                  .padding(.horizontal, 20)
-                                            }
-                                      }
-                                      Spacer()
+//                                VStack(alignment: .leading, spacing: 20) {
+//                                      
+//                                      
+//                                      LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
+//                                            ForEach(commitments) { commitment in
+//                                                  Button(action: {
+//                                                        toggleCommitmentCompletion(commitment)
+//                                                  }) {
+//                                                        HStack {
+//                                                              Text(commitment.title)
+//                                                                    .font(.subheadline)
+//                                                                    .foregroundColor(.ourDarkGreen)
+//                                                                    .lineLimit(1)
+//                                                              
+//                                                              if commitment.isCompleted {
+//                                                                    Image(systemName: "checkmark.square.fill")
+//                                                                          .foregroundColor(.green)
+//                                                              } else {
+//                                                                    Image(systemName: "square")
+//                                                                          .foregroundColor(.gray)
+//                                                              }
+//                                                        }
+//                                                  }
+//                                                  .padding(.horizontal, 20)
+//                                            }
+//                                      }
+//                                      Spacer()
                                       
                                       
                                       VStack(alignment: .leading, spacing: 20) {
@@ -338,38 +347,35 @@ struct plan: View {
                                       }
                                       
                                       
-                                      VStack(alignment: .leading, spacing: 20) {
-                                            
-                                            
-                                            Text("ميزانية القرض: ")
-                                                  .font(.headline)
-                                                  .padding(.leading)
-                                            
-                                            Menu {
-                                                  ForEach(loanBudget, id: \.self) { type in
-                                                        Button(action: {
-                                                              selectedProjectLoan = type
-                                                        }) {
-                                                              Label(type, systemImage: "square")
-                                                        }
+                                VStack(alignment: .leading, spacing: 20) {
+                                      Text("ميزانية القرض: ")
+                                            .font(.headline)
+                                            .padding(.leading)
+                                      Menu {
+                                            ForEach(loanBudget, id: \.self) { type in
+                                                  Button(action: {
+                                                        selectedProjectLoan = type
+                                                  }) {
+                                                        Label(type, systemImage: "square")
                                                   }
-                                            } label: {
-                                                  HStack {
-                                                        Image(systemName: "chevron.down")
-                                                              .foregroundColor(.black)
-                                                        Text(selectedProjectLoan ?? "اختر ميزانية القرض")
-                                                              .foregroundColor(.gray)
-                                                  }
-                                                  .frame(maxWidth: .infinity)
-                                                  .frame(height: 40)
-                                                  .background(Color.white)
-                                                  .cornerRadius(10)
-                                                  .overlay(
-                                                      RoundedRectangle(cornerRadius: 10)
-                                                            .stroke(fcolor, lineWidth: 1)
-                                                  )
-                                                  .padding(.horizontal, 20)
                                             }
+                                      } label: {
+                                            HStack {
+                                                  Image(systemName: "chevron.down")
+                                                        .foregroundColor(.black)
+                                                  Text(selectedProjectLoan ?? "اختر ميزانية القرض")
+                                                        .foregroundColor(.gray)
+                                            }
+                                            .frame(maxWidth: .infinity)
+                                            .frame(height: 40)
+                                            .background(Color.white)
+                                            .cornerRadius(10)
+                                            .overlay(
+                                                RoundedRectangle(cornerRadius: 10)
+                                                      .stroke(fcolor, lineWidth: 1)
+                                            )
+                                            .padding(.horizontal, 20)
+                                      }}
                                             
                                             
                                             Spacer()
@@ -379,7 +385,7 @@ struct plan: View {
                                                   Button(action: {
                                                         save = true
                                                         
-                                                        
+                                                        presentationMode.wrappedValue.dismiss()
                                                   }) {
                                                         Text("حفظ")
                                                               .foregroundColor(.white)
@@ -428,23 +434,20 @@ struct plan: View {
               }
                     
         }
-}
-      private func toggleCommitmentCompletion(_ commitment: Commitment) {
-             if let index = commitments.firstIndex(where: { $0.id == commitment.id }) {
-                 commitments[index].isCompleted.toggle()
-             }
-         }
-     }
+
+      
+     
 
      struct Commitments_Previews: PreviewProvider {
          static var previews: some View {
-               plan()
+               plan(projectName:"", projectDescription: "")
                
          }
      }
 
+
 #Preview {
-    plan()
+      plan(projectName: "", projectDescription: "")
             .environment(\.layoutDirection, .rightToLeft)
 
 

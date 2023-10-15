@@ -31,8 +31,8 @@ struct Tasks: View {
             
             VStack {
                 
-                Divider()
-                    .padding(.horizontal)
+//                Divider()
+//                    .padding(.horizontal)
                 
              
                 Image("Image 1")
@@ -87,10 +87,8 @@ struct Tasks: View {
             
            
             .navigationBarTitle("قائمة المهام")
-            .padding(.trailing, 20)
-            .environment(\.layoutDirection, .leftToRight)
-          //
-        }
+            .padding()
+        }.environment(\.layoutDirection, .leftToRight)
         
         
         .listStyle(PlainListStyle())
@@ -113,6 +111,7 @@ struct Tasks: View {
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
         Tasks()
+            .environment(\.layoutDirection, .leftToRight)
     }
 }
 
