@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SwiftUICharts
+import SDWebImageSwiftUI
 
 @main
 struct FlosnaApp: App {

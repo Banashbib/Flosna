@@ -19,6 +19,10 @@
 		1FAEDF222ACEE11D00E4E1F2 /* FlosnaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAEDF212ACEE11D00E4E1F2 /* FlosnaUITestsLaunchTests.swift */; };
 		1FB0270E2AD4378100F9265D /* welcom1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB0270D2AD4378100F9265D /* welcom1.swift */; };
 		1FB8E54F2ADC1C980098E197 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB8E54E2ADC1C980098E197 /* Profile.swift */; };
+		5DA1B3BE2ADC1F50001E7B55 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA1B3BD2ADC1F50001E7B55 /* Dashboard.swift */; };
+		5DA1B3C12ADC1F83001E7B55 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 5DA1B3C02ADC1F83001E7B55 /* SwiftUICharts */; };
+		5DA1B3C32ADC1F93001E7B55 /* splash page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA1B3C22ADC1F93001E7B55 /* splash page.swift */; };
+		5DA1B3C62ADC1FF3001E7B55 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5DA1B3C52ADC1FF3001E7B55 /* SDWebImageSwiftUI */; };
 		CD08CCA82AD435B9007952CB /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08CCA72AD435B9007952CB /* Questions.swift */; };
 		CD08CCBE2AD6C6A0007952CB /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08CCBD2AD6C6A0007952CB /* Tasks.swift */; };
 		F3EEBBDC2AD822BB0051C7AB /* plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EEBBDB2AD822BB0051C7AB /* plan.swift */; };
@@ -57,6 +61,8 @@
 		1FAEDF212ACEE11D00E4E1F2 /* FlosnaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlosnaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1FB0270D2AD4378100F9265D /* welcom1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = welcom1.swift; sourceTree = "<group>"; };
 		1FB8E54E2ADC1C980098E197 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = ../Profile.swift; sourceTree = "<group>"; };
+		5DA1B3BD2ADC1F50001E7B55 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		5DA1B3C22ADC1F93001E7B55 /* splash page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "splash page.swift"; sourceTree = "<group>"; };
 		CD08CCA72AD435B9007952CB /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		CD08CCBD2AD6C6A0007952CB /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tasks.swift; path = ../Tasks.swift; sourceTree = "<group>"; };
 		F3EEBBDB2AD822BB0051C7AB /* plan.swift */ = {isa = PBXFileReference; indentWidth = 6; lastKnownFileType = sourcecode.swift; path = plan.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -67,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DA1B3C62ADC1FF3001E7B55 /* SDWebImageSwiftUI in Frameworks */,
+				5DA1B3C12ADC1F83001E7B55 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +129,8 @@
 				1F0DDAAD2AD57A5B001F407E /* Welcome2.swift */,
 				1F0DDAAF2AD57AD6001F407E /* Welcome3.swift */,
 				1F0DDAB12AD57B27001F407E /* Registeration .swift */,
+				5DA1B3BD2ADC1F50001E7B55 /* Dashboard.swift */,
+				5DA1B3C22ADC1F93001E7B55 /* splash page.swift */,
 				1FAEDF0A2ACEE11D00E4E1F2 /* Preview Content */,
 			);
 			path = Flosna;
@@ -167,6 +177,10 @@
 			dependencies = (
 			);
 			name = Flosna;
+			packageProductDependencies = (
+				5DA1B3C02ADC1F83001E7B55 /* SwiftUICharts */,
+				5DA1B3C52ADC1FF3001E7B55 /* SDWebImageSwiftUI */,
+			);
 			productName = Flosna;
 			productReference = 1FAEDF012ACEE11C00E4E1F2 /* Flosna.app */;
 			productType = "com.apple.product-type.application";
@@ -239,6 +253,10 @@
 				Base,
 			);
 			mainGroup = 1FAEDEF82ACEE11C00E4E1F2;
+			packageReferences = (
+				5DA1B3BF2ADC1F83001E7B55 /* XCRemoteSwiftPackageReference "ChartView" */,
+				5DA1B3C42ADC1FF3001E7B55 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 1FAEDF022ACEE11C00E4E1F2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -283,11 +301,13 @@
 			files = (
 				CD08CCBE2AD6C6A0007952CB /* Tasks.swift in Sources */,
 				CD08CCA82AD435B9007952CB /* Questions.swift in Sources */,
+				5DA1B3BE2ADC1F50001E7B55 /* Dashboard.swift in Sources */,
 				1F0DDAAE2AD57A5B001F407E /* Welcome2.swift in Sources */,
 				1FB0270E2AD4378100F9265D /* welcom1.swift in Sources */,
 				1FAEDF072ACEE11C00E4E1F2 /* ContentView.swift in Sources */,
 				F3EEBBDC2AD822BB0051C7AB /* plan.swift in Sources */,
 				1F0DDAB02AD57AD6001F407E /* Welcome3.swift in Sources */,
+				5DA1B3C32ADC1F93001E7B55 /* splash page.swift in Sources */,
 				1FAEDF052ACEE11C00E4E1F2 /* FlosnaApp.swift in Sources */,
 				1FB8E54F2ADC1C980098E197 /* Profile.swift in Sources */,
 				1F0DDAB22AD57B27001F407E /* Registeration .swift in Sources */,
@@ -616,6 +636,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5DA1B3BF2ADC1F83001E7B55 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.5;
+			};
+		};
+		5DA1B3C42ADC1FF3001E7B55 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5DA1B3C02ADC1F83001E7B55 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DA1B3BF2ADC1F83001E7B55 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+		5DA1B3C52ADC1FF3001E7B55 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DA1B3C42ADC1FF3001E7B55 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1FAEDEF92ACEE11C00E4E1F2 /* Project object */;
 }
