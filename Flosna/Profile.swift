@@ -7,7 +7,7 @@
 import SwiftUI
 import Foundation
 
-struct الملفالشخصي: View {
+struct Profile: View {
     @State var tog : Bool = false
     @State private var showLogoutAlert = false
     @State private var showDeleteAccountAlert = false
@@ -153,5 +153,5 @@ struct الملفالشخصي: View {
     
 
 #Preview {
-    الملفالشخصي()
+    Profile()
 }
