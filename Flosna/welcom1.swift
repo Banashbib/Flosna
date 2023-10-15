@@ -11,16 +11,20 @@ struct welcom1: View {
     var body: some View {
         
             NavigationView{
+                
                 ZStack (alignment: .topTrailing){
+                   
                 Image("welcome page 1")
                     .resizable()
                     .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-               
                 Button(action: {
                     
                     print("Skip button tapped")
-                }) {
-                    NavigationLink(destination: Welcome2()) {
+                })
+                    {
+                    
+                    
+                        NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true)) {
                         Text("تخطي")
                             .font(.headline)
                             .padding(10)
@@ -30,11 +34,14 @@ struct welcom1: View {
                             .padding(.trailing, 20)
                             .padding(.top, 3)
                     }
+                    
                 }
+               
                 
                
 
-            }
+                }
+               
            // Text("تخطي").font(.headline)
                        //.padding(10)
         }
