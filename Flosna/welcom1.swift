@@ -9,11 +9,13 @@ import SwiftUI
 
 struct welcom1: View {
     var body: some View {
-        ZStack (alignment: .topTrailing){
+        
             NavigationView{
+                ZStack (alignment: .topTrailing){
                 Image("welcome page 1")
                     .resizable()
                     .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+               
                 Button(action: {
                     
                     print("Skip button tapped")
@@ -30,8 +32,11 @@ struct welcom1: View {
                     }
                 }
                 
-                
+               
+
             }
+           // Text("تخطي").font(.headline)
+                       //.padding(10)
         }
     }
 }
