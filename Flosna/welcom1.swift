@@ -24,7 +24,7 @@ struct welcom1: View {
                     {
                     
                     
-                        NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true)) {
+                        NavigationLink(destination: Registeration().navigationBarBackButtonHidden(true)) {
                         Text("تخطي")
                             .font(.headline)
                             .padding(10)
