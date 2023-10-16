@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F0DDAAE2AD57A5B001F407E /* Welcome2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0DDAAD2AD57A5B001F407E /* Welcome2.swift */; };
-		1F0DDAB02AD57AD6001F407E /* Welcome3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0DDAAF2AD57AD6001F407E /* Welcome3.swift */; };
 		1F0DDAB22AD57B27001F407E /* Registeration .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0DDAB12AD57B27001F407E /* Registeration .swift */; };
 		1FAEDF052ACEE11C00E4E1F2 /* FlosnaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAEDF042ACEE11C00E4E1F2 /* FlosnaApp.swift */; };
 		1FAEDF072ACEE11C00E4E1F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAEDF062ACEE11C00E4E1F2 /* ContentView.swift */; };
@@ -46,8 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1F0DDAAD2AD57A5B001F407E /* Welcome2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome2.swift; sourceTree = "<group>"; };
-		1F0DDAAF2AD57AD6001F407E /* Welcome3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome3.swift; sourceTree = "<group>"; };
 		1F0DDAB12AD57B27001F407E /* Registeration .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Registeration .swift"; sourceTree = "<group>"; usesTabs = 0; };
 		1FAEDF012ACEE11C00E4E1F2 /* Flosna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flosna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FAEDF042ACEE11C00E4E1F2 /* FlosnaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlosnaApp.swift; sourceTree = "<group>"; };
@@ -59,7 +55,7 @@
 		1FAEDF1B2ACEE11D00E4E1F2 /* FlosnaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlosnaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FAEDF1F2ACEE11D00E4E1F2 /* FlosnaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlosnaUITests.swift; sourceTree = "<group>"; };
 		1FAEDF212ACEE11D00E4E1F2 /* FlosnaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlosnaUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		1FB0270D2AD4378100F9265D /* welcom1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = welcom1.swift; sourceTree = "<group>"; };
+		1FB0270D2AD4378100F9265D /* welcom1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = welcom1.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; wrapsLines = 1; };
 		1FB8E54E2ADC1C980098E197 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = ../Profile.swift; sourceTree = "<group>"; };
 		5DA1B3BD2ADC1F50001E7B55 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		5DA1B3C22ADC1F93001E7B55 /* splash page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "splash page.swift"; sourceTree = "<group>"; };
@@ -126,8 +122,6 @@
 				1FAEDF082ACEE11D00E4E1F2 /* Assets.xcassets */,
 				CD08CCA72AD435B9007952CB /* Questions.swift */,
 				1FB0270D2AD4378100F9265D /* welcom1.swift */,
-				1F0DDAAD2AD57A5B001F407E /* Welcome2.swift */,
-				1F0DDAAF2AD57AD6001F407E /* Welcome3.swift */,
 				1F0DDAB12AD57B27001F407E /* Registeration .swift */,
 				5DA1B3BD2ADC1F50001E7B55 /* Dashboard.swift */,
 				5DA1B3C22ADC1F93001E7B55 /* splash page.swift */,
@@ -302,11 +296,9 @@
 				CD08CCBE2AD6C6A0007952CB /* Tasks.swift in Sources */,
 				CD08CCA82AD435B9007952CB /* Questions.swift in Sources */,
 				5DA1B3BE2ADC1F50001E7B55 /* Dashboard.swift in Sources */,
-				1F0DDAAE2AD57A5B001F407E /* Welcome2.swift in Sources */,
 				1FB0270E2AD4378100F9265D /* welcom1.swift in Sources */,
 				1FAEDF072ACEE11C00E4E1F2 /* ContentView.swift in Sources */,
 				F3EEBBDC2AD822BB0051C7AB /* plan.swift in Sources */,
-				1F0DDAB02AD57AD6001F407E /* Welcome3.swift in Sources */,
 				5DA1B3C32ADC1F93001E7B55 /* splash page.swift in Sources */,
 				1FAEDF052ACEE11C00E4E1F2 /* FlosnaApp.swift in Sources */,
 				1FB8E54F2ADC1C980098E197 /* Profile.swift in Sources */,

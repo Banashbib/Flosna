@@ -7,28 +7,30 @@
 
 import SwiftUI
 
-struct welcom1: View {
+struct WelcomeView: View {
     var body: some View {
-        
-            NavigationView{
+        NavigationView{
+            ZStack (alignment: .topTrailing){
+                TabView {
+                    WelcomePage(imageName: "welcome page 1")
+                    WelcomePage(imageName: "WP2")
+                    WelcomePage(imageName: "welcome page 3")
+                }
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+                .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
                 
-                ZStack (alignment: .topTrailing){
-                   
-                Image("welcome page 1")
-                    .resizable()
-                    .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                 Button(action: {
                     
                     print("Skip button tapped")
                 })
-                    {
+                {
                     
                     
-                        NavigationLink(destination: Registeration().navigationBarBackButtonHidden(true)) {
+                    NavigationLink(destination: Registeration().navigationBarBackButtonHidden(true)) {
                         Text("تخطي")
                             .font(.headline)
                             .padding(10)
-                        //.background(Color.gray)
+                            //.background(Color.gray)
                             .foregroundColor(.gray)
                             .cornerRadius(8)
                             .padding(.trailing, 20)
@@ -36,18 +38,29 @@ struct welcom1: View {
                     }
                     
                 }
-               
+            }
                 
-               
-
-                }
-               
-           // Text("تخطي").font(.headline)
-                       //.padding(10)
         }
     }
 }
-
-#Preview {
-    welcom1()
+struct WelcomePage: View {
+    var imageName: String
+    
+    var body: some View {
+        GeometryReader { geometry in
+            Image(imageName)
+                //.resizable()
+                //.scaledToFit()
+                .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                .frame(width: geometry.size.width, height: geometry.size.height)
+        }
+      
+    }
 }
+
+struct WelcomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        WelcomeView()
+    }
+}
+
