@@ -11,7 +11,13 @@ struct DashboardView: View {
     
     var body: some View {
         VStack(alignment: .trailing, spacing: 30) {
-            
+
+            Text("التحليل المالي")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .foregroundColor(.black)
+                .padding(.horizontal, 20)
+
                
             Divider()
                 .padding(.horizontal,20)
