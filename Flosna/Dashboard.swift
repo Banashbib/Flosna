@@ -6,38 +6,43 @@ struct DashboardView: View {
 
     
     var body: some View {
-        VStack(alignment: .trailing, spacing: 30) {
-            Text("التحليل المالي")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(.black)
-                .padding(.horizontal, 20)
-            
-            Divider()
-                .padding(.horizontal,20)
-            VStack(){
-                HStack(){               PieChartView(data: [30, 50, 20,10], title: "النسبة المستحقة لمتطلبات المشروع")
-                        .foregroundColor(.green)
+        NavigationView{
+            VStack() {
                 
-                    
-                    
-                    BarChartView(data: ChartData(values: data), title: "الربحية والعوائد المالية")
-                    
-                }
-
+                //            Text("التحليل المالي")
+//                .font(.title)
+//                .fontWeight(.bold)
+//                .foregroundColor(.black)
+//                .padding(.horizontal, 20)
                 
-                HStack(){   LineChartView(data: [8,23,54,32,12,37,7,23,43], title:"الارباح")
-                    LineChartView(data: [88,77,40], title: "")
+                               
+                Spacer()
                     
+                VStack(){
+                    HStack(){               PieChartView(data: [30, 50, 20,10], title: "النسبة المستحقة لمتطلبات المشروع")
+                            .foregroundColor(.green)
+                        
+                        
+                        
+                        BarChartView(data: ChartData(values: data), title: "الربحية والعوائد المالية")
+                        
+                    }
+                    
+                    
+                    HStack(){   LineChartView(data: [8,23,54,32,12,37,7,23,43], title:"الارباح")
+                        LineChartView(data: [88,77,40], title: "")
+                        
+                    }
+                  Spacer()
+                       
                 }
                 
                 
             }
-                
-            
+          .padding()
+          
         }
-        .padding()
-       
+        .navigationTitle( "التحليل المالي")  .padding().environment(\.layoutDirection, .leftToRight)
     }
     
 }
