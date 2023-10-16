@@ -16,8 +16,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
             endingLineNumber = "18"
-            landmarkName = "body"
-            landmarkType = "24">
+            landmarkName = "Registeration"
+            landmarkType = "14">
             <Locations>
                <Location
                   uuid = "360B31E0-A933-4B7F-999F-C43BDD1EB6FE - abbd57638ddfa026"
@@ -109,6 +109,21 @@
                   endingLineNumber = "18"
                   offsetFromSymbolStart = "1208">
                </Location>
+               <Location
+                  uuid = "360B31E0-A933-4B7F-999F-C43BDD1EB6FE - 5df95545ba038209"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of Flosna.Registeration.digit3 : Swift.String"
+                  moduleName = "Flosna"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/banaalshabib/Documents/Flosna/Flosna/Registeration%20.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "36">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -124,8 +139,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
             endingLineNumber = "17"
-            landmarkName = "body"
-            landmarkType = "24">
+            landmarkName = "Registeration"
+            landmarkType = "14">
             <Locations>
                <Location
                   uuid = "2A334E8E-213A-426F-9391-3ACA10EA6C64 - abbd57638ddfa026"
@@ -171,6 +186,21 @@
                   startingLineNumber = "17"
                   endingLineNumber = "17"
                   offsetFromSymbolStart = "308">
+               </Location>
+               <Location
+                  uuid = "2A334E8E-213A-426F-9391-3ACA10EA6C64 - 11bee87dbef0b508"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of Flosna.Registeration.digit2 : Swift.String"
+                  moduleName = "Flosna"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/banaalshabib/Documents/Flosna/Flosna/Registeration%20.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "36">
                </Location>
             </Locations>
          </BreakpointContent>
