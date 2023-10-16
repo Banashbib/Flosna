@@ -64,13 +64,14 @@ struct Profile: View {
                                 .fill(Color.ourgray).frame(width: 346.0, height: 54.8)
                                 .cornerRadius(9)
                             
-                            
-                            Text("الاسئلة الشائعة")
-                                .font(.title)
-                                .padding(.trailing, 120.0
-                                )
-                            //end Zstack
-                                
+                            NavigationLink(destination: Questions().navigationBarBackButtonHidden(false)) {
+                                Text("الاسئلة الشائعة")
+                                    .font(.title)
+                                    .foregroundColor(Color.black)
+                                    .padding(.trailing, 120.0
+                                    )
+                                //end Zstack
+                            }
                         }
                         
                         //Vstack cont. تسجيل خروج

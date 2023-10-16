@@ -14,7 +14,7 @@ struct FlosnaApp: App {
     var body: some Scene {
         WindowGroup {
 
-        
+            //splash_page()
             ContentView()
                 .environment(\.locale, Locale(identifier: "ar"))
                 .environment(\.layoutDirection, .rightToLeft)
