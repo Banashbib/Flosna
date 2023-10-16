@@ -86,11 +86,11 @@ struct Tasks: View {
             }
             
            
-            .navigationBarTitle("قائمة المهام")
-            .padding()
-        }.environment(\.layoutDirection, .leftToRight)
+        }
         
-        
+        .navigationBarTitle("قائمة المهام")
+        .padding().environment(\.layoutDirection, .leftToRight)
+
         .listStyle(PlainListStyle())
         .background(Color.clear)
       //
