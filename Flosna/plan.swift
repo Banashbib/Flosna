@@ -48,7 +48,7 @@ struct plan: View {
         
         
         @State private var partnerNames: [String] = []
-        @State private var partnerPercentages: [Double] = []
+        @State private var partnerPercentages: [String] = []
 
         
         
@@ -210,20 +210,18 @@ struct plan: View {
                                                             .stroke(fcolor, lineWidth: 1)
                                                            
                                                   )
-                                                  TextField("نسبة الشريك", value: Binding(
+                                                  TextField("نسبة الشريك", text: Binding(
                                                       get: { partnerPercentages[index] },
                                                       set: { partnerPercentages[index] = $0 }
-                                                  ), format: .number)
+                                                  ))
                                                   .padding()
                                                   .frame(width: 165, height: 45)
-                                                  .keyboardType(.decimalPad)
+                                                  .keyboardType(.numberPad)
                                                   .background(Color.white)
-                                                
                                                   .cornerRadius(10)
-                                                  
                                                   .overlay(
                                                       RoundedRectangle(cornerRadius: 10)
-                                                            .stroke(fcolor, lineWidth: 1)
+                                                          .stroke(fcolor, lineWidth: 1)
                                                   )
                                                   
                                              
@@ -233,7 +231,7 @@ struct plan: View {
                                       
                                       Button(action: {
                                             partnerNames.append("")
-                                            partnerPercentages.append(0.0)
+                                            partnerPercentages.append("")
                                       }) {
                                             Text("إضافة شريك")
                                                   .foregroundColor(.ourgreen)
