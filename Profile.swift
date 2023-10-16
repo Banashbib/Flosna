@@ -24,7 +24,7 @@ struct Profile: View {
                 
                 VStack{
                     Image("sara").resizable().frame(width:150 , height:150).cornerRadius(400)
-                        .padding()
+                        .padding(.bottom, 80)
                     ZStack{
                         Rectangle()
                             .fill(Color.ourgray).frame(width: 346.0, height: 54.8)
@@ -133,20 +133,20 @@ struct Profile: View {
                     
                    
                     
-                    .navigationBarTitle("الملف الشخصي")
-                                                                   .environment(\.layoutDirection, .rightToLeft)
-                                                                   .padding()
-                                                                  .environment(\.layoutDirection, .rightToLeft)
-                                                                   //            .padding()
-                                                                   .padding()
-                                                                   .environment(\.locale, Locale(identifier: "ar"))
-                                                                   .environment(\.layoutDirection, .rightToLeft)
+                  
                     
                 }
                 
                 
             }
-            
+                    .navigationBarTitle("الملف الشخصي")
+                                                                                     .environment(\.layoutDirection, .rightToLeft)
+                                                                                     .padding()
+                                                                                    .environment(\.layoutDirection, .rightToLeft)
+                                                                                     //            .padding()
+                                                                                     .padding()
+                  //                                                                   .environment(\.locale, Locale(identifier: "ar"))
+                  //                                                                   .environment(\.layoutDirection, .rightToLeft)
 
         }
         

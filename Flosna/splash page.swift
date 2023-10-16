@@ -19,13 +19,14 @@ struct SplashPage: View {
                     .aspectRatio(contentMode: .fit)
                     .padding()
                     .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                             showSplash = false
                         }
                     }
             } else {
                 // Show your main view here
-                Text("Wlc page")
+                
+                WelcomeView()
             }
         }
     }

@@ -39,7 +39,7 @@ struct WelcomeView: View {
                     
                 }
             }
-                
+            .environment(\.layoutDirection, .leftToRight)
         }
     }
 }
