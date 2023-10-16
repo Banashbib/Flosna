@@ -39,11 +39,10 @@ struct DashboardView: View {
                 
                 
             }
-                
-            
+          .padding()
+          
         }
-        .padding()
-       
+        .navigationTitle( "التحليل المالي")  .padding().environment(\.layoutDirection, .leftToRight)
     }
     
 }
@@ -53,3 +52,4 @@ struct ContentView_Previews: PreviewProvider {
         DashboardView()
     }
 }
+

@@ -136,9 +136,7 @@ struct Profile: View {
                     .navigationBarTitle("الملف الشخصي")
                                                                    .environment(\.layoutDirection, .rightToLeft)
                                                                    .padding()
-                                                                   
-                                                                   
-                                                                   .environment(\.layoutDirection, .rightToLeft)
+                                                                  .environment(\.layoutDirection, .rightToLeft)
                                                                    //            .padding()
                                                                    .padding()
                                                                    .environment(\.locale, Locale(identifier: "ar"))
