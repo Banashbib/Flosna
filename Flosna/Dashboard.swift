@@ -12,11 +12,6 @@ struct DashboardView: View {
     var body: some View {
         VStack(alignment: .trailing, spacing: 30) {
 
-<<<<<<< HEAD
-=======
-
->>>>>>> main
-           
                
             Divider()
                 .padding(.horizontal,20)

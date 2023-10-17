@@ -524,15 +524,7 @@ var body: some View {
             .navigationTitle("الخطة")
             
            
-//            .navigationBarItems(trailing: Button(action: {
-//                let newProject = Project(title: title, description: description, image: Image("Rectangle 2"), page1: "list.bullet.clipboard.fill", page2: "waveform.path.ecg.rectangle.fill")
-//                projects.append(newProject)
-//                dismissAction()
-//            }) {
-//                Text("حفظ")
-//                    .foregroundColor(.ourgreen)
-//                    .environment(\.layoutDirection, .rightToLeft)
-//            })
+
         }.environment(\.layoutDirection, .rightToLeft)
 
     }
@@ -540,11 +532,7 @@ var body: some View {
 
 
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
+
 #Preview {
     ContentView()
         .environment(\.layoutDirection, .rightToLeft)
