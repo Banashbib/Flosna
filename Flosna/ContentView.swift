@@ -154,7 +154,7 @@ struct ProjectDetail: View {
 }
 
 struct AddProjectView: View {
-    @State private var partnerName: String = ""
+    @State private var partnerNumber: String = ""
     @State private var partnerPercentage: String = ""
     @State private var selectedLoanBudget: String? = nil
     @State private var isShowingProjectTypes: Bool = false
@@ -171,7 +171,7 @@ struct AddProjectView: View {
        ]
       
       
-      @State private var partnerNames: [String] = []
+      @State private var partnerNumbers: [String] = []
       @State private var partnerPercentages: [String] = []
 
     @Environment(\.presentationMode) var presentationMode
@@ -305,11 +305,11 @@ var body: some View {
                     Text("الشريك : ")
                         .font(.headline)
                         .padding(.leading)
-                    ForEach(0..<partnerNames.count, id: \.self) { index in
+                    ForEach(0..<partnerNumbers.count, id: \.self) { index in
                         HStack(spacing: 20) {
-                            TextField("إسم الشريك", text: Binding(
-                                get: { partnerNames[index] },
-                                set: { partnerNames[index] = $0 }
+                            TextField("رقم الشريك", text: Binding(
+                                get: { partnerNumbers[index] },
+                                set: { partnerNumbers[index] = $0 }
                                 
                             ))
                             .padding()
@@ -338,7 +338,7 @@ var body: some View {
                             )
                             
                             Button(action: {
-                                        partnerNames.remove(at: index)
+                                partnerNumbers.remove(at: index)
                                         partnerPercentages.remove(at: index)
                                     }) {
                                         Image(systemName: "trash")
@@ -348,7 +348,7 @@ var body: some View {
                         .padding()
                     }
                     Button(action: {
-                        partnerNames.append("")
+                        partnerNumbers.append("")
                         partnerPercentages.append("")
                     }) {
                         Text("إضافة شريك")
