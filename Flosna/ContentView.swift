@@ -5,6 +5,7 @@
 //  Created by Bana Alshabib on 20/03/1445 AH.
 //
 
+
 import SwiftUI
 
 struct Project: Identifiable {
@@ -14,8 +15,36 @@ struct Project: Identifiable {
     var image: Image
     var page1: String
     var page2: String
-
-    
+    var selectedProjectType : String
+    var selectedProjectBudget : String
+    var selectedProjectLoan : String
+    var  selectedProjectWorker : String
+    var selectedProjectRent : String
+   
+//    mutating func settitle (c : String){
+//        title = c
+//    }
+    public func gettititle ()-> String{
+        return title
+    }
+    public func getdescription ()-> String{
+        return description
+    }
+    public func getselectedProjectType ()-> String{
+        return selectedProjectType
+    }
+    public func getselectedProjectBudget ()-> String{
+        return selectedProjectBudget
+    }
+    public func getselectedProjectLoan ()-> String{
+        return selectedProjectLoan
+    }
+    public func getselectedProjectWorker ()-> String{
+        return selectedProjectWorker
+    }
+    public func getselectedProjectRent ()-> String{
+        return selectedProjectRent
+    }
 }
 
 struct ContentView: View {
@@ -60,7 +89,6 @@ struct ContentView: View {
                         .foregroundColor(.ourgreen)
                         .font(.system(size: 28))
                 }
-                .padding(.leading, 250.0)
             })
         }
         
@@ -83,12 +111,12 @@ struct ProjectRow: View {
                 
                 project.image
                     .resizable()
-                    .scaledToFit()
-                    .frame(width: 350, height: 250)
-                    .clipShape(Rectangle())
+                    //.scaledToFit()
+                   // .frame(width: 350, height: 250)
+                    //.clipShape(Rectangle())
                     .padding(.bottom,30)
                     //.padding(.horizontal,20)
-                    .background(Color.clear)
+                    //.background(Color.clear)
                 
                
             }
@@ -115,46 +143,68 @@ struct ProjectDetail: View {
     var project: Project
     
     var body: some View {
-        VStack {
-            project.image
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(height: 200)
+        ScrollView {
+        HStack{
             
-            Text(project.title)
-                .font(.title)
-                .padding()
-            
-            Text(project.description)
-                .font(.subheadline)
-                //.padding()
-                .foregroundColor(.gray)
-            
-            HStack(spacing: 60) {
-                NavigationLink(destination: Tasks()) {
-                    Image(systemName: "list.bullet.clipboard.fill")
-                        .foregroundColor(.ourgreen)
+            VStack(alignment: .leading) {
+               
+                    project.image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 200)
+                    
+                    Text(project.title)
+                        .font(.title)
                         .padding()
+                    
+                    Text(project.description)
+                        .font(.subheadline)
+                    //.padding()
+                        .foregroundColor(.gray)
+                        .padding(.bottom, 20.0)
+                Text("نوع المشروع").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                Text(project.getselectedProjectType())
+                    .padding(.bottom, 10.0)
+                Text("ميزانية المشروع").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                Text(project.getselectedProjectBudget())
+                    .padding(.bottom, 10.0)
+                Text("ميزانية القرض").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                Text(project.getselectedProjectLoan())
+                    .padding(.bottom, 10.0)
+                Text("ميزانية الموظفين").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                Text(project.getselectedProjectWorker())
+                    .padding(.bottom, 10.0)
+                Text(" ميزانية الايجار").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                Text(project.getselectedProjectRent())
+                    .padding(.bottom, 10.0)
+                    HStack(spacing: 60) {
+                        NavigationLink(destination: Tasks()) {
+                            Image(systemName: "list.bullet.clipboard.fill")
+                                .foregroundColor(.ourgreen)
+                                .padding()
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        
+                        NavigationLink(destination: DashboardView()) {
+                            Image(systemName: "waveform.path.ecg.rectangle.fill")
+                                .foregroundColor(.ourgreen)
+                                .padding()
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                    }
+                    
+                    Spacer()
+                    
                 }
-               .buttonStyle(PlainButtonStyle())
-                
-                NavigationLink(destination: DashboardView()) {
-                    Image(systemName: "waveform.path.ecg.rectangle.fill")
-                        .foregroundColor(.ourgreen)
-                        .padding()
-                }
-                .buttonStyle(PlainButtonStyle())
             }
-                
+            .padding(.trailing, 10)
+            .navigationTitle("تفاصيل المشروع")
             
-            Spacer()
-        }
-        .navigationTitle("تفاصيل المشروع")
-    }
+        }}
 }
 
 struct AddProjectView: View {
-    @State private var partnerNumber: String = ""
+    @State private var partnerName: String = ""
     @State private var partnerPercentage: String = ""
     @State private var selectedLoanBudget: String? = nil
     @State private var isShowingProjectTypes: Bool = false
@@ -164,6 +214,7 @@ struct AddProjectView: View {
     @State private var selectedProjectWorker: String? = nil
     @State private var selectedProjectRent: String? = nil
     @State private var save = false
+    @State private var cancell = false
     @State private var commitments = [
            Commitment(title: "قرض"),
            Commitment(title: "ايجار"),
@@ -171,11 +222,10 @@ struct AddProjectView: View {
        ]
       
       
-      @State private var partnerNumbers: [String] = []
+      @State private var partnerNames: [String] = []
       @State private var partnerPercentages: [String] = []
 
-    @Environment(\.presentationMode) var presentationMode
-
+      
       
       let projectTypes = ["مأكولات", "عطور", "ملابس"]
       let projectBudget = ["5000 - 10,000 SR", "10,000 - 15,000 SR","15,000 - 20,000 SR"]
@@ -305,15 +355,15 @@ var body: some View {
                     Text("الشريك : ")
                         .font(.headline)
                         .padding(.leading)
-                    ForEach(0..<partnerNumbers.count, id: \.self) { index in
+                    ForEach(0..<partnerNames.count, id: \.self) { index in
                         HStack(spacing: 20) {
-                            TextField("رقم الشريك", text: Binding(
-                                get: { partnerNumbers[index] },
-                                set: { partnerNumbers[index] = $0 }
+                            TextField("إسم الشريك", text: Binding(
+                                get: { partnerNames[index] },
+                                set: { partnerNames[index] = $0 }
                                 
                             ))
                             .padding()
-                            .frame(width: 150, height: 45)
+                            .frame(width: 165, height: 45)
                             .keyboardType(.numberPad)
                             .background(Color.white)
                             .cornerRadius(10)
@@ -328,7 +378,7 @@ var body: some View {
                                 set: { partnerPercentages[index] = $0 }
                             ))
                             .padding()
-                            .frame(width: 150, height: 45)
+                            .frame(width: 165, height: 45)
                             .keyboardType(.numberPad)
                             .background(Color.white)
                             .cornerRadius(10)
@@ -337,18 +387,12 @@ var body: some View {
                                     .stroke(Color.ourgreen, lineWidth: 1)
                             )
                             
-                            Button(action: {
-                                partnerNumbers.remove(at: index)
-                                        partnerPercentages.remove(at: index)
-                                    }) {
-                                        Image(systemName: "trash")
-                                            .foregroundColor(.gray)
-                                    }
+                            
                         }
                         .padding()
                     }
                     Button(action: {
-                        partnerNumbers.append("")
+                        partnerNames.append("")
                         partnerPercentages.append("")
                     }) {
                         Text("إضافة شريك")
@@ -457,74 +501,51 @@ var body: some View {
                               }
                         }
                         VStack(alignment: .leading, spacing: 20) {
-                            Text("ميزانية القرض: ")
-                                .font(.headline)
-                                .padding(.leading)
-                            Menu {
-                                ForEach(loanBudget, id: \.self) { type in
-                                    Button(action: {
-                                        selectedProjectLoan = type
-                                    }) {
-                                        Label(type, systemImage: "square")
+                              Text("ميزانية القرض: ")
+                                    .font(.headline)
+                                    .padding(.leading)
+                              Menu {
+                                    ForEach(loanBudget, id: \.self) { type in
+                                          Button(action: {
+                                                selectedProjectLoan = type
+                                          }) {
+                                                Label(type, systemImage: "square")
+                                          }
                                     }
-                                }
-                            } label: {
-                                HStack {
-                                    Image(systemName: "chevron.down")
-                                        .foregroundColor(.gray)
-                                    Text(selectedProjectLoan ?? "اختر ميزانية القرض")
-                                        .foregroundColor(.gray)
-                                }
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 55)
-                                .background(Color.white)
-                                .cornerRadius(10)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(Color.ourgreen, lineWidth: 1)
-                                )
-                                .padding(.horizontal, 20)
-                            }
-                            
-                            Spacer()
-                            Button(action: {
-                                  save = true
-                                  
-                                  presentationMode.wrappedValue.dismiss()
-                                let newProject = Project(title: title, description: description, image: Image("Rectangle 2"), page1: "list.bullet.clipboard.fill", page2: "waveform.path.ecg.rectangle.fill")
-                                                projects.append(newProject)
-                                                dismissAction()
-
-                                
-                                
-                            }) {
-                                
-                                  Text("حفظ")
-                                            .foregroundColor(.white)
-                                            .font(.headline)
-                                            .padding()
-                                            .frame(width: 300, height: 45)
-                                            .background(Color.ourgreen)
-                                            .cornerRadius(10)
-                                            .frame(maxWidth: .infinity) 
-                                            .padding(.horizontal, 20)
-                            }
-                            
-                        }
-                            
-                        
-                        
-                        
-                        
+                              } label: {
+                                    HStack {
+                                          Image(systemName: "chevron.down")
+                                                .foregroundColor(.gray)
+                                          Text(selectedProjectLoan ?? "اختر ميزانية القرض")
+                                                .foregroundColor(.gray)
+                                    }
+                                    .frame(maxWidth: .infinity)
+                                    .frame(height: 55)
+                                    .background(Color.white)
+                                    .cornerRadius(10)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .stroke(Color.ourgreen, lineWidth: 1)
+                                    )
+                                    .padding(.horizontal, 20)
+                              }}
                         
                 }
                 }
                 
-            } 
+            }
             .navigationTitle("الخطة")
             
            
-
+            .navigationBarItems(trailing: Button(action: {
+                let newProject = Project(title: title, description: description, image: Image("Rectangle 2"), page1: "list.bullet.clipboard.fill", page2: "waveform.path.ecg.rectangle.fill", selectedProjectType: selectedProjectType ?? "", selectedProjectBudget:selectedProjectBudget ?? "", selectedProjectLoan: selectedProjectLoan ?? "", selectedProjectWorker :selectedProjectWorker ?? "" , selectedProjectRent : selectedProjectRent ?? "")
+                projects.append(newProject)
+                dismissAction()
+            }) {
+                Text("حفظ")
+                    .foregroundColor(.ourgreen)
+                    .environment(\.layoutDirection, .rightToLeft)
+            })
         }.environment(\.layoutDirection, .rightToLeft)
 
     }
@@ -532,14 +553,14 @@ var body: some View {
 
 
 
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}
 
 #Preview {
     ContentView()
-        .environment(\.layoutDirection, .rightToLeft)
-    
 }
-
-
-
 
 
