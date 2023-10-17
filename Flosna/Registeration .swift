@@ -6,43 +6,27 @@
 //
 
 import SwiftUI
-//import LocalAuthentication
+
+struct Country: Hashable {
+    let name: String
+    let dialCode: String
+}
 
 struct Registeration: View {
-    // @State private var isUnlocked = false
-    @State private var phoneNumber: String = ""
-    @State private var verificationCode: String = ""
+    @State private var isShowingVerificationSheet = false
+    @State private var phoneNumber = ""
+    @State private var selectedCountry: Country?
     
-    @State private var digit1: String = ""
-    @State private var digit2: String = ""
-    @State private var digit3: String = ""
-    @State private var digit4: String = ""
-    
-    let fcolor = Color(red:0.486, green: 0.729, blue: 0.588)
+    let countries: [Country] = [
+        Country(name: "🇸🇦", dialCode: "+966"),
+        Country(name: "🇦🇪", dialCode: "+971"),
+        Country(name: "🇶🇦", dialCode: "+974"),
+        // إضافة المزيد من الدول هنا
+    ]
     
     var body: some View {
         NavigationView{
-            VStack  {
-                //Spacer()
-                // NavigationView {
-                HStack{
-                    
-                    //Spacer()
-                    Text("التسجيل")
-                        .font(.largeTitle)
-                        .bold()
-                        .padding(.bottom,1)
-                    
-                    
-                    Spacer()
-                }
-                .padding(.top,10)
-                .padding(.horizontal,30)
-                
-//                Divider()
-//                    .padding(.horizontal,20)
-                //Spacer()
-                    .padding()
+            VStack {
                 TextField("رقم الهاتف", text: $phoneNumber)
                     .padding()
                     .keyboardType(.numberPad)
@@ -50,157 +34,137 @@ struct Registeration: View {
                     .cornerRadius(10)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke(fcolor, lineWidth: 1)
+                            .stroke(Color.ourgreen, lineWidth: 1)
                     )
                     .padding(.horizontal,20)
-                
-                
-                VStack {
-                    Text("ادخل رمز التحقق")
-                        .font(.headline)
-                        .foregroundColor(Color.gray)
-                        .padding()
-                    
-                    HStack(spacing: 16) {
-                        DigitTextField(tag: 1, text: $digit1)
-                        DigitTextField(tag: 2, text: $digit2)
-                        DigitTextField(tag: 3, text: $digit3)
-                        DigitTextField(tag: 4, text: $digit4)
-                    }
-                    .padding()
-                    
-                    Button("") {
-                        let verificationCode = digit1 + digit2 + digit3 + digit4
-                        
-                        // Perform verification logic here
-                        if verificationCode == "1234" {
-                            // Verification code is correct
-                            print("Verification Successful")
-                        } else {
-                            // Verification code is incorrect
-                            print("Verification Failed")
+                    .overlay(
+                        Picker("Country", selection: $selectedCountry) {
+                            ForEach(countries, id: \.self) { country in
+                                Text("\(country.name) (\(country.dialCode))").tag(country)
+                            }
                         }
-                    }
-                    .padding()
-                    
-                    // Spacer()
-                }
-                .padding()
+                        
+                            .pickerStyle(MenuPickerStyle())
+                            .frame(maxWidth: .infinity, alignment: .trailing)
+                            .padding(.trailing, 12)
+                            .accentColor(.ourgreen)
+                    )
                 
-                
-                
-                
-                
-                //                TextField("رمز التحقق", text: $verificationCode)
-                //                    .padding()
-                //                    .keyboardType(.numberPad)
-                //                    .background(Color.white)
-                //                    .cornerRadius(10)
-                //                    .overlay(
-                //                        RoundedRectangle(cornerRadius: 10)
-                //                            .stroke(fcolor, lineWidth: 1)
-                //                    )
-                
-                .padding(.horizontal,20)
-                Spacer()
-                HStack{
-                    
-                    
-                    
-                    //Spacer()
-                    
                     Button(action: {
-                        cancel()
+                        isShowingVerificationSheet = true
                     }) {
-                        NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true)){
-                            Text("لاحقًا")
-                                .font(.headline)
-                                .foregroundColor(fcolor)
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                            //.background(Color.green)
-                                .cornerRadius(10)
-                                .background(Color.white)
-                                .cornerRadius(10)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(fcolor, lineWidth: 1)
-                                )
-                        }}
-                    .padding()
-                    
-                    Button(action: {
-                        register()
-                    }) {                Button("") {
-                        let verificationCode = digit1 + digit2 + digit3 + digit4
-                        
-                        // Perform verification logic here
-                        if verificationCode == "1234" {
-                            // Verification code is correct
-                            print("Verification Successful")
-                        } else {
-                            // Verification code is incorrect
-                            print("Verification Failed")
-                        }
+                        Text("التحقق")
+                            .padding()
+                            .frame(width: 322, height: 50)
+                            .background(Color.ourgreen)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
                     }
-                        NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true)){
-                            Text("تسجيل")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                                .background(fcolor)
-                                .cornerRadius(10)
-                            
-                        }}
-                    .padding()
-                    
-                    
-                }
-                .padding(.horizontal,2)
+                NavigationLink(destination: ContentView()){
+                    Button(action: {
+                        
+                    }) {
+                        Text("لاحقًا")
+                            .padding()
+                            .frame(width: 322, height: 50)
+                            .background(Color.clear)
+                            .foregroundColor(.ourgreen)
+                            .cornerRadius(10)
+                    }}
                 Spacer()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .sheet(isPresented: $isShowingVerificationSheet) {
+                    VerificationSheet(selectedCountry: selectedCountry)
+                }
             }
-            //}
             
-        }}
-    
-    private func register() {
-        // Perform registration logic here
-        // You can use the phoneNumber and verificationCode variables
-        // to send the data to a server or perform any other necessary actions
-        print("Registered with phone number: \(phoneNumber)")
-        print("Verification code: \(verificationCode)")
-    }
-    private func cancel() {
-        // Perform registration logic here
-        // You can use the phoneNumber and verificationCode variables
-        // to send the data to a server or perform any other necessary actions
-        print("Registered Canceled")
-        
+            .padding()
+            .navigationBarTitle("التسجيل")
+            
+        }
     }
 }
 
-struct DigitTextField: View {
-    let tag: Int
-    @Binding var text: String
+struct VerificationSheet: View {
+    @State private var verificationCodes: [String] = Array(repeating: "", count: 4)
+    let selectedCountry: Country?
+    
     
     var body: some View {
-        TextField("", text: $text)
-            .keyboardType(.numberPad)
-            .frame(width: 50, height: 50)
-            .font(.title)
-            .background(Color.gray.opacity(0.2))
-            .cornerRadius(10)
-            .multilineTextAlignment(.center)
-            .tag(tag)
+        VStack {
+            Text("رمز التحقق")
+                .font(.title)
+                .padding(.bottom, 20)
+            
+            HStack {
+                ForEach(0..<4, id: \.self) { index in
+                    TextField("", text: $verificationCodes[index])
+                        .keyboardType(.numberPad)
+                        .frame(width: 60, height: 60)
+                        .background(Color.white)
+                    //.cornerRadius(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.ourgreen, lineWidth: 1)
+                        )
+                    //                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .onChange(of: verificationCodes[index]) { newValue in
+                            // تحقق من عدد الأحرف وحدد الخانة التالية إذا كانت الخانة الحالية ممتلئة
+                            if newValue.count > 1 {
+                                let currentIndex = index
+                                let nextIndex = currentIndex + 1
+                                if nextIndex < verificationCodes.count {
+                                    DispatchQueue.main.async {
+                                        verificationCodes[currentIndex] = String(newValue.prefix(1))
+                                        _ = UIResponder.becomeFirstResponder
+                                        verificationCodes[nextIndex] = String(newValue.suffix(1))
+                                    }
+                                } else {
+                                    DispatchQueue.main.async {
+                                        verificationCodes[currentIndex] = String(newValue.prefix(1))
+                                        _ = UIResponder.resignFirstResponder
+                                    }
+                                }
+                            }
+                        }
+                }
+            }
+            .padding()
+            NavigationLink(destination: ContentView()){
+                Button(action: {
+                    // يمكنك هنا تنفيذ الإجراء المطلوب بعد التحقق من الرمز
+                }) {
+                    Text("التسجيل")
+                        .padding()
+                        .frame(width: 350, height: 50)
+                        .background(Color.ourgreen)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+            }
+                .padding()
+                
+                Spacer()
+            }
     }
 }
+
+struct ReView: View {
+    var body: some View {
+        Registeration()
+        //Registeration
+           
+    }
+}
+//#Preview{
+//    ReView()
+//        .environment(\.layoutDirection, .rightToLeft)
+//}
+
 
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        Registeration()
+        ReView()
             .environment(\.layoutDirection, .rightToLeft)
 
     }
