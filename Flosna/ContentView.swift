@@ -60,6 +60,7 @@ struct ContentView: View {
                         .foregroundColor(.ourgreen)
                         .font(.system(size: 28))
                 }
+                .padding(.leading, 250.0)
             })
         }
         
