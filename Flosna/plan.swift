@@ -200,7 +200,7 @@ struct plan: View {
                                                       
                                                   ))
                                                   .padding()
-                                                  .frame(width: 165, height: 45)
+                                                  .frame(width: 150, height: 45)
                                                   .keyboardType(.numberPad)
                                                   .background(Color.white)
                                                   .cornerRadius(10)
@@ -215,7 +215,7 @@ struct plan: View {
                                                       set: { partnerPercentages[index] = $0 }
                                                   ))
                                                   .padding()
-                                                  .frame(width: 165, height: 45)
+                                                  .frame(width: 150, height: 45)
                                                   .keyboardType(.numberPad)
                                                   .background(Color.white)
                                                   .cornerRadius(10)
@@ -223,7 +223,13 @@ struct plan: View {
                                                       RoundedRectangle(cornerRadius: 10)
                                                           .stroke(fcolor, lineWidth: 1)
                                                   )
-                                                  
+                                                  Button(action: {
+                                                              partnerNames.remove(at: index)
+                                                              partnerPercentages.remove(at: index)
+                                                          }) {
+                                                              Image(systemName: "trash")
+                                                                  .foregroundColor(.gray)
+                                                          }
                                              
                                             }
                                             .padding()

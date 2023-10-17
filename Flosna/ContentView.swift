@@ -163,7 +163,6 @@ struct AddProjectView: View {
     @State private var selectedProjectWorker: String? = nil
     @State private var selectedProjectRent: String? = nil
     @State private var save = false
-    @State private var cancell = false
     @State private var commitments = [
            Commitment(title: "قرض"),
            Commitment(title: "ايجار"),
@@ -174,7 +173,8 @@ struct AddProjectView: View {
       @State private var partnerNames: [String] = []
       @State private var partnerPercentages: [String] = []
 
-      
+    @Environment(\.presentationMode) var presentationMode
+
       
       let projectTypes = ["مأكولات", "عطور", "ملابس"]
       let projectBudget = ["5000 - 10,000 SR", "10,000 - 15,000 SR","15,000 - 20,000 SR"]
@@ -312,7 +312,7 @@ var body: some View {
                                 
                             ))
                             .padding()
-                            .frame(width: 165, height: 45)
+                            .frame(width: 150, height: 45)
                             .keyboardType(.numberPad)
                             .background(Color.white)
                             .cornerRadius(10)
@@ -327,7 +327,7 @@ var body: some View {
                                 set: { partnerPercentages[index] = $0 }
                             ))
                             .padding()
-                            .frame(width: 165, height: 45)
+                            .frame(width: 150, height: 45)
                             .keyboardType(.numberPad)
                             .background(Color.white)
                             .cornerRadius(10)
@@ -336,7 +336,13 @@ var body: some View {
                                     .stroke(Color.ourgreen, lineWidth: 1)
                             )
                             
-                            
+                            Button(action: {
+                                        partnerNames.remove(at: index)
+                                        partnerPercentages.remove(at: index)
+                                    }) {
+                                        Image(systemName: "trash")
+                                            .foregroundColor(.gray)
+                                    }
                         }
                         .padding()
                     }
@@ -450,34 +456,65 @@ var body: some View {
                               }
                         }
                         VStack(alignment: .leading, spacing: 20) {
-                              Text("ميزانية القرض: ")
-                                    .font(.headline)
-                                    .padding(.leading)
-                              Menu {
-                                    ForEach(loanBudget, id: \.self) { type in
-                                          Button(action: {
-                                                selectedProjectLoan = type
-                                          }) {
-                                                Label(type, systemImage: "square")
-                                          }
+                            Text("ميزانية القرض: ")
+                                .font(.headline)
+                                .padding(.leading)
+                            Menu {
+                                ForEach(loanBudget, id: \.self) { type in
+                                    Button(action: {
+                                        selectedProjectLoan = type
+                                    }) {
+                                        Label(type, systemImage: "square")
                                     }
-                              } label: {
-                                    HStack {
-                                          Image(systemName: "chevron.down")
-                                                .foregroundColor(.gray)
-                                          Text(selectedProjectLoan ?? "اختر ميزانية القرض")
-                                                .foregroundColor(.gray)
-                                    }
-                                    .frame(maxWidth: .infinity)
-                                    .frame(height: 55)
-                                    .background(Color.white)
-                                    .cornerRadius(10)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .stroke(Color.ourgreen, lineWidth: 1)
-                                    )
-                                    .padding(.horizontal, 20)
-                              }}
+                                }
+                            } label: {
+                                HStack {
+                                    Image(systemName: "chevron.down")
+                                        .foregroundColor(.gray)
+                                    Text(selectedProjectLoan ?? "اختر ميزانية القرض")
+                                        .foregroundColor(.gray)
+                                }
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 55)
+                                .background(Color.white)
+                                .cornerRadius(10)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color.ourgreen, lineWidth: 1)
+                                )
+                                .padding(.horizontal, 20)
+                            }
+                            
+                            Spacer()
+                            Button(action: {
+                                  save = true
+                                  
+                                  presentationMode.wrappedValue.dismiss()
+                                let newProject = Project(title: title, description: description, image: Image("Rectangle 2"), page1: "list.bullet.clipboard.fill", page2: "waveform.path.ecg.rectangle.fill")
+                                                projects.append(newProject)
+                                                dismissAction()
+
+                                
+                                
+                            }) {
+                                
+                                  Text("حفظ")
+                                            .foregroundColor(.white)
+                                            .font(.headline)
+                                            .padding()
+                                            .frame(width: 300, height: 45)
+                                            .background(Color.ourgreen)
+                                            .cornerRadius(10)
+                                            .frame(maxWidth: .infinity) 
+                                            .padding(.horizontal, 20)
+                            }
+                            
+                        }
+                            
+                        
+                        
+                        
+                        
                         
                 }
                 }
@@ -486,15 +523,15 @@ var body: some View {
             .navigationTitle("الخطة")
             
            
-            .navigationBarItems(trailing: Button(action: {
-                let newProject = Project(title: title, description: description, image: Image("Rectangle 2"), page1: "list.bullet.clipboard.fill", page2: "waveform.path.ecg.rectangle.fill")
-                projects.append(newProject)
-                dismissAction()
-            }) {
-                Text("حفظ")
-                    .foregroundColor(.ourgreen)
-                    .environment(\.layoutDirection, .rightToLeft)
-            })
+//            .navigationBarItems(trailing: Button(action: {
+//                let newProject = Project(title: title, description: description, image: Image("Rectangle 2"), page1: "list.bullet.clipboard.fill", page2: "waveform.path.ecg.rectangle.fill")
+//                projects.append(newProject)
+//                dismissAction()
+//            }) {
+//                Text("حفظ")
+//                    .foregroundColor(.ourgreen)
+//                    .environment(\.layoutDirection, .rightToLeft)
+//            })
         }.environment(\.layoutDirection, .rightToLeft)
 
     }
