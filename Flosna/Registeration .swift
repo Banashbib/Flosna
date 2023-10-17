@@ -60,7 +60,7 @@ struct Registeration: View {
                     }
                 
                 
-                .sheet(isPresented: $isShowingVerificationSheet) {
+                .fullScreenCover(isPresented: $isShowingVerificationSheet) {
                     VerificationSheet(selectedCountry: selectedCountry)
                 }
                 Button(action: {
@@ -90,7 +90,8 @@ struct Registeration: View {
 struct VerificationSheet: View {
     @State private var verificationCodes: [String] = Array(repeating: "", count: 4)
     let selectedCountry: Country?
-    
+    @State private var isShowingContentView = false
+        
     
     var body: some View {
        
@@ -138,18 +139,19 @@ struct VerificationSheet: View {
                 .padding()
                 
                 Button(action: {
-                   
-                })
-                {
-                    NavigationLink(destination: ContentView()
-                        .navigationBarBackButtonHidden(true)) {
-                            Text("التسجيل")
-                                .padding()
-                                .frame(width: 350, height: 50)
-                                .background(Color.ourgreen)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                        }}
+                                isShowingContentView = true
+                            }) {
+                                Text("التسجيل")
+                                    .padding()
+                                    .frame(width: 350, height: 50)
+                                    .background(Color.ourgreen)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(10)
+                            }
+                            .fullScreenCover(isPresented: $isShowingContentView) {
+                                ContentView()
+                            }
+                            
                 .padding()
                             
                             Spacer()
