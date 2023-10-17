@@ -9,9 +9,12 @@ import SwiftUI
 import Foundation
 
 struct Profile: View {
+    @State public var selectedProjectWorker: String? = nil
+    let lang = ["arabic", "english"]
     @State var tog : Bool = false
     @State private var showLogoutAlert = false
     @State private var showDeleteAccountAlert = false
+    let fcolor = Color(red: 0.486, green: 0.729, blue: 0.588)
     var body: some View {
                     NavigationView {
                 
@@ -158,3 +161,25 @@ struct Profile: View {
 #Preview {
     Profile()
 }
+//Menu {
+//      ForEach(WorkerBudget, id: \.self) { type in
+//            Button(action: {
+//                  selectedProjectWorker = type
+//            })
+//       {
+//      HStack {
+//            Image(systemName: "chevron.down")
+//                  .foregroundColor(.black)
+//            Text(selectedProjectWorker ?? "اختر ميزانية الموظفين")
+//                  .foregroundColor(.gray)
+//      }
+//      .frame(maxWidth: .infinity)
+//      .frame(height: 40)
+//      .background(Color.white)
+//      .cornerRadius(10)
+//      .overlay(
+//          RoundedRectangle(cornerRadius: 10)
+//                .stroke(fcolor, lineWidth: 1)
+//      )
+//      .padding(.horizontal, 20)
+//}
