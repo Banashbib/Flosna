@@ -21,7 +21,6 @@ struct Registeration: View {
         Country(name: "🇸🇦", dialCode: "+966"),
         Country(name: "🇦🇪", dialCode: "+971"),
         Country(name: "🇶🇦", dialCode: "+974"),
-        // إضافة المزيد من الدول هنا
     ]
     
     var body: some View {
@@ -47,7 +46,7 @@ struct Registeration: View {
                             .pickerStyle(MenuPickerStyle())
                             .frame(maxWidth: .infinity, alignment: .trailing)
                             .padding(.trailing, 12)
-                            .accentColor(.ourgreen)
+                            .accentColor(.black)
                     )
                 
                     Button(action: {
@@ -60,7 +59,7 @@ struct Registeration: View {
                             .foregroundColor(.white)
                             .cornerRadius(10)
                     }
-                NavigationLink(destination: ContentView()){
+                NavigationLink(destination:ContentView()){
                     Button(action: {
                         
                     }) {
