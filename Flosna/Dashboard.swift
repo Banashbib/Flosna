@@ -4,10 +4,15 @@ import SwiftUICharts
 struct DashboardView: View {
     let data: [(String, Double)] = [("اجمالي الارباح", 20), ("الربح الصافي", 10), ("عائد المال الاستثماري", 60), ("صافي العوائد", 50)]
 
-    let chartStyle = ChartStyle(backgroundColor: Color.white, accentColor: Colors.BorderBlue, secondGradientColor: Colors.OrangeEnd, textColor: Color.black, legendTextColor: Color.gray, dropShadowColor: Color.gray )
+   
+    
+    let chartStyle = ChartStyle(backgroundColor: Color.white, accentColor: Color.green, secondGradientColor: Color.green, textColor: Color.black, legendTextColor: Color.gray, dropShadowColor: Color.gray)
     
     
-    let chartStyle0 = ChartStyle(backgroundColor: Color.white, accentColor: Colors.BorderBlue, secondGradientColor: Colors.DarkPurple, textColor: Color.black, legendTextColor: Color.gray, dropShadowColor: Color.gray )
+    let chartStyle0 = ChartStyle(backgroundColor: Color.white, accentColor: Color.green, secondGradientColor: Color.green, textColor: Color.black, legendTextColor: Color.gray, dropShadowColor: Color.gray)
+    
+   
+    
     
     var body: some View {
         VStack(alignment: .trailing, spacing: 30) {
@@ -18,15 +23,6 @@ struct DashboardView: View {
             Divider()
                 .padding(.horizontal,20)
 
-//            Text("التحليل المالي")
-//                .font(.largeTitle)
-//                .fontWeight(.bold)
-//                .foregroundColor(.black)
-//                .padding(.horizontal, 20)
-//
-//               
-//            Divider()
-//                .padding(.horizontal,20)
 
             VStack(){
                 HStack(){              
@@ -41,9 +37,13 @@ struct DashboardView: View {
                 }
 
                 
-                HStack(){   LineChartView(data: [8,23,54,32,12,37,7,23,43], title:"الارباح")
-                    MultiLineChartView(data: [([8,32,11,23,40,28], GradientColors.green), ([90,99,78,111,70,60,77], GradientColors.purple), ([34,56,72,38,43,100,50], GradientColors.orngPink)], title: "التدفق المالي")
+                HStack(){ 
                     
+                    LineChartView(data: [8, 23, 54, 32, 12, 37, 7, 23, 43], title: "الارباح")
+                  
+                    
+                    MultiLineChartView(data: [([8,32,11,23,40,28], GradientColors.green), ([90,99,78,111,70,60,77], GradientColors.green), ([34,56,72,38,43,100,50], GradientColors.green)], title: "التدفق المالي")
+                  
                 }
                 
                 
