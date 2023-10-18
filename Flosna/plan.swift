@@ -421,11 +421,7 @@ struct plan: View {
                                       
                                 
                                       }
-                                      
-                                       
-                                      
-                                      
-                                      
+    
                                       
                                 }
                           
