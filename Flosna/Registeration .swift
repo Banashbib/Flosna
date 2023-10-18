@@ -60,7 +60,7 @@ struct Registeration: View {
                     }
                 
                 
-                .fullScreenCover(isPresented: $isShowingVerificationSheet) {
+                .sheet(isPresented: $isShowingVerificationSheet) {
                     VerificationSheet(selectedCountry: selectedCountry)
                 }
                 Button(action: {
