@@ -94,9 +94,9 @@ struct ContentView: View {
         }
         
         .sheet(isPresented: $isShowingAddProject) {
-            AddProjectView(projects: $projects, dismissAction: {
-                    isShowingAddProject = false
-                })
+                    AddProjectView(projects: $projects, title:"", dismissAction: {
+                            isShowingAddProject = false
+                        })
             
         }
     }
@@ -142,7 +142,7 @@ struct ProjectRow: View {
 
 struct ProjectDetail: View {
     var project: Project
-    
+    @State private var projects: [Project] = []
     var body: some View {
         ScrollView {
         HStack{
@@ -192,6 +192,14 @@ struct ProjectDetail: View {
                                 .padding()
                         }
                         .buttonStyle(PlainButtonStyle())
+                        
+                        NavigationLink(destination: AddProjectView(projects: $projects, title: project.title, dismissAction:{}))
+                                                          {
+                                                          Image(systemName: "pencil.circle.fill")
+                                                              .foregroundColor(.ourgreen)
+                                                              .padding()
+                                                      }
+                                                      .buttonStyle(PlainButtonStyle())
                     }
                     
                     Spacer()
@@ -226,7 +234,11 @@ struct AddProjectView: View {
       @State private var partnerNumbers: [String] = []
       @State private var partnerPercentages: [String] = []
 
-      
+    init(projects: Binding<[Project]>, title: String, dismissAction: @escaping () -> Void) {
+            self._projects = projects
+            self._title = State(initialValue: title)
+            self.dismissAction = dismissAction
+        }
       
       let projectTypes = ["مأكولات", "عطور", "ملابس"]
       let projectBudget = ["5000 - 10,000 SR", "10,000 - 15,000 SR","15,000 - 20,000 SR"]
@@ -552,7 +564,12 @@ var body: some View {
                                    selectedProjectWorker: selectedProjectWorker ?? "",
                                    selectedProjectRent: selectedProjectRent ?? ""
                                )
-                            projects.append(newProject)
+                            
+                            if let index = projects.firstIndex(where: { $0.title == newProject.title }) {
+                                projects[index] = newProject
+                            } else {
+                                projects.append(newProject)
+                            }
                             dismissAction()
                             
                         }) 
